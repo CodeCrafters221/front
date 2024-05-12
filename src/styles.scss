@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+
+
+:root{
+    // --primary : #2AB033;
+    --primary : #003465;
+    --primary-light : #0069CB;
+    --primary-lighter: #0062FF;
+    --primary-contrast: #ACAEFF;
+    --primary-dark : #0F1222;
+    --primary-darker: black;
+
+    --secondary: #FFC145;
+    --secondary-dark: #F7A400;
+    --tertiary: #CEB094;
+
+    --radial: radial-gradient(58.43% 103.88% at 56.74% 50%, #0085FF 0%, #003465 100%);
+    --light: #ffffff;
+
+
+    --success: #22C55E;
+    --success-light: #4AD991;
+    --alert: #FF4545;
+
+
+  }
+
+  @font-face {
+    font-family: "actor";
+    font-weight: normal;
+    font-size: normal;
+    src: url('./assets/fonts/actor-regular.ttf"');
+  }
