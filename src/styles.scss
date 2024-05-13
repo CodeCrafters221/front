@@ -1,9 +1,6 @@
-
-
-
-
+@import "./global-styles/global";
 :root{
-    // --primary : #2AB033;
+    --primary : #2AB033;
     --primary : #003465;
     --primary-light : #0069CB;
     --primary-lighter: #0062FF;
@@ -30,5 +27,22 @@
     font-family: "actor";
     font-weight: normal;
     font-size: normal;
-    src: url('./assets/fonts/actor-regular.ttf"');
+    src: url('/assets/fonts/actor-regular.ttf'); 
+  }
+
+  *{
+    font-family: "actor";
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+  }
+
+
+  h1{font-size: 4rem;}
+  h2{font-size: 3rem;}
+
+
+  html,body{
+    height: 100vh;
+    width: 100vw;
   }

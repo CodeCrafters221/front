@@ -1,0 +1,91 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--radial);
+    width: 100%;
+    .header{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+         .logo{
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+
+            img{
+                height: 40px;
+                width: auto;
+                object-fit: contain;
+                margin-bottom: 2px;
+            }
+            &::after{
+                content: "MICROFINANCE DIGITALE";
+                color: var(--light);
+            }
+        }
+            
+            .navbar{
+        height: fit-content;
+        min-width: 80%;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            ul{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 80%;
+                li{
+                    list-style: none;
+                    margin-right: 1rem;
+                    a{
+                        color: var(--light);
+                        text-decoration: none;
+                        font-size: small;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.btn-secondary{
+    background-color: var(--secondary);
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.2);
+    &:hover{
+        background-color: var(--secondary-dark);
+    };
+}
+
+
+.btn-transparent{
+    background-color: transparent;
+    border-radius: 1rem;
+    border: none;
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+    color: var(--light);
+    border: 1px solid var(--light);
+    &:hover{
+        background-color: var(--light);
+        color: var(--primary);
+    };
+}
