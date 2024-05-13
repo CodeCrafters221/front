@@ -1,3 +1,8 @@
+h2,h3,h4{
+    color: var(--light);
+}
+
+// FIRST SECTION
 .landing{
     display: flex;
     flex-direction: row;
@@ -7,6 +12,8 @@
     height: 80vh;
     padding: 0 3rem;
 
+
+
     .landing-text{
         display: flex;
         flex-direction: column;
@@ -14,6 +21,8 @@
         justify-content: center;
         width: 50%;
         padding: 2rem;
+        transition: all;
+        animation: fade-in-left 1s forwards;
         h1,p{
             color: var(--light);
         }
@@ -31,10 +40,34 @@
         flex-direction: column;
         justify-content: center;
         width: 50%;
+        transition: all;
+        animation: fade-in-right 1.5s forwards;
+    }
+    // ANIMATIONS
+    @keyframes fade-in-left{
+        0%{
+            opacity: 0;
+            transform: translateX(-3rem);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes fade-in-right{
+        0%{
+            opacity: 0;
+            transform: translateX(3rem);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 }
 
 
+// SECOND SECTION
 .how-it-works{
     display: flex;
     flex-direction: column;
@@ -42,9 +75,7 @@
     width: 100%;
     min-height: 80vh;
     padding: 0 1rem;
-    h2,h3,p{
-        color: var(--light);;
-    }
+    
     .inner{
         display: flex;
         flex-direction: row;
@@ -62,6 +93,7 @@
             width: 33%;
             height: 100%;
             padding: 2rem;
+            margin-bottom: 5rem;
             .card-img{
                 display: flex;
                 flex-direction: column;
@@ -81,15 +113,114 @@
                 justify-content: center;
                 width: 66%;
                 height: auto;
-                h3{
+                h3,p{
                     text-align: center;
                 }
-                p{
-                    font-size: small;
-                    color: rgba(255,255,255,0.4)
-                }
+                p{ font-size: small;}
             }
         
         }
     }
+}
+
+
+// THIRD SECTION
+.our-partners{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 80vh;
+    padding: 0 1rem;
+    p{
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+    .partners{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 0 1rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        .partner{
+            border: solid 1px var(--lighter);
+            border-radius: 15px;
+            background: rgba($color: #fff, $alpha: .1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 20%;
+            height: 20%;
+            margin: 1rem;
+            padding: 1rem;
+            h4{text-transform: uppercase; margin-bottom: 1rem;}
+        
+            img{
+                object-fit: cover;
+                border-radius: 50%;
+                margin-bottom: 2rem;
+            }
+            button{
+                font-size: small;
+            }
+        }
+    }
+}
+
+
+// FOOTER
+footer{
+    background-color: var(--primary);
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .navbar{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .logo{
+            display: flex;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    .follow-us{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h3{text-align: center;}
+        margin-top: 1rem;
+        ul{
+            list-style: none;
+            display: flex;
+            img{margin: 0.5rem;}
+            img:hover{
+                transform: scale(1.5);
+                transition: ease-in-out 0.1s;
+            }
+        }
+
+
+    }
+    h3{
+        color: var(--light);
+        text-align: center;
+    }
+    .copyright{
+        color: var(--light);
+        position: relative;
+        top: 2rem;
+    }
+
 }

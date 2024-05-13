@@ -1,0 +1,44 @@
+button{
+    text-transform: uppercase;
+}
+// YELLO BUTTON WITH SHADOW
+.btn-secondary{
+    background-color: var(--secondary);
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.2);
+    &:hover{
+        background-color: var(--secondary-dark);
+    };
+}
+
+
+// BLUE BUTTON WITH SHADOW
+.btn-primary{
+    @extend .btn-secondary;
+    background-color: var(--primary);
+    border-radius: 1rem;
+    &:hover{
+        background-color: var(--primary-light);
+    };
+}
+
+
+
+// TRANSPARENT BUTTON
+.btn-transparent{
+    background-color: transparent;
+    border-radius: 1rem;
+    border: none;
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+    color: var(--light);
+    border: 1px solid var(--light);
+    &:hover{
+        background-color: var(--light);
+        color: var(--primary);
+    };
+}
