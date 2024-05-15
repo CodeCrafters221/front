@@ -1,0 +1,82 @@
+
+// MAIN SECTION
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--radial);
+    width: 100%;
+    .header{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+         .logo{
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            cursor: pointer;
+            img{
+                height: 40px;
+                width: auto;
+                object-fit: contain;
+                margin-bottom: 2px;
+            }
+            &::after{
+                content: "MICROFINANCE DIGITALE";
+                color: var(--light);
+            }
+        }
+            
+        
+    }
+}
+
+
+// BARRE DE NAVIGATEUR
+.navbar{
+    height: fit-content;
+    min-width: 80%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        
+        // LISTE DES LIENS DU MENU
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+            li{
+                list-style: none;
+                margin-right: 1rem;
+                transition: all .5s ease-in-out;
+                padding: 12px;
+                border-radius: 15px;
+
+                a{
+                    color: var(--light);
+                    text-decoration: none;
+                    font-size: small;
+                }
+
+                &:hover{
+                    border: solid .5px var(--light);
+                    border-radius: 15px;
+                }
+                &:nth-of-type(5):hover{
+                    border: none;
+                }
+            }
+        }
+    }
