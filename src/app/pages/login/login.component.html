@@ -11,20 +11,28 @@
             <form action="#">
                 <div class="input-box">
                     <label for="role">Rôle</label>
-                    <select name="role" id="role-id" placeholder = "Rôle" required>
-                        <option value="" selected hidden>Rôle</option>
-                        <option value="CLIENT">CLIENT</option>
-                        <option value="ADMIN">ADMIN</option>
-                        <option value="AGENT_MICROFINANCE">AGENT MICROFINANCE</option>
-                      </select>
+                      <mat-form-field>
+                        <mat-label>Select an option</mat-label>
+                        <mat-select>
+                          <mat-option value="CLIENT">Client</mat-option>
+                          <mat-option value="ADMIN">Admin</mat-option>
+                          <mat-option value="AGENT_MICROFINANCE">Agent Microfinance</mat-option>
+                        </mat-select>
+                      </mat-form-field>
                 </div>
                 <div class="input-box">
-                    <label for="email">Email</label>
-                    <input type="email" name="emailID" placeholder="Email" required>
+                     <label for="email">Email</label>
+                    <mat-form-field>
+                        <mat-label>{{"example@gmail.com"}}</mat-label>
+                        <input type="email" name="email" matInput placeholder="Email">
+                    </mat-form-field>
                 </div>
                 <div class="input-box">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" name="password" placeholder="Mot de passe" required>
+                   <label for="password">Mot de passe</label>
+                    <mat-form-field>
+                        <input name="password" matInput required placeholder="Entrer votre mot de passe" [type]="hide ? 'password' : 'text'">
+                        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </mat-form-field>
                     <a href="#">Mot de passe oublié</a>
                 </div>
                 <div class="input-box">

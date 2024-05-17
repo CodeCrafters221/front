@@ -62,7 +62,7 @@ $custom-secondary-map: (
 
 
 $codecraft_frontend-primary: mat.define-palette($custom-primary-map);
-$codecraft_frontend-accent: mat.define-palette($custom-secondary-map, A200, A100, A400);
+$codecraft_frontend-accent: mat.define-palette($custom-secondary-map); 
 $codecraft_frontend-warn: mat.define-palette(mat.$red-palette); // The warn palette is optional (defaults to red).
 
 // Create the theme object. A theme consists of configurations for individual
@@ -144,3 +144,7 @@ $codecraft_frontend-theme: mat.define-light-theme((
   }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+ .mat-mdc-text-field-wrapper{
+  border-radius: 15px !important;
+}
