@@ -19,9 +19,10 @@ export class LoginComponent {
   get password() { return this.loginForm.get('password'); }
 
   formMaker : FormField[] = [
-    {key: 'role', name: 'Rôle', type: 'select',formControlname: this.role as FormControl, options: ['CLIENT', 'ADMIN', 'AGENT_MICROFINANCE']},
-    {key: 'email', name: 'Email', type: 'email',formControlname: this.email as FormControl},
-    {key: 'password', name: 'Mot de passe', type: 'password', formControlname: this.password as FormControl},
+    {key: 'role', name: 'Rôle', type: 'select', label: "Quel est votre rôle", formControl: this.role as FormControl, 
+    options: [ {optionName: 'Admin', value: 'ADMIN'}, {optionName: 'Agent Microfinance', value: 'AGENT_MICROFINANCE'}, {optionName: 'Client', value: 'CLIENT'} ]},
+    {key: 'email', name: 'Email', label: "example@gmail.com", type: 'email',formControl: this.email as FormControl},
+    {key: 'password', name: 'Mot de passe', type: 'password', formControl: this.password as FormControl},
   ]
 
   login: Login ;
@@ -30,17 +31,25 @@ export class LoginComponent {
     this.login = new Login() ;
   }
 
+
+
+
+
+  onSubmit(){
+    console.log("VALUE OF THE FORM: ", this.loginForm.value);
+  }
 }
 
 
 export interface FormField {
   key: string,
   name: string,
-  type?: string,
-  formControlname: FormControl,
-  options?: any[],
+  formControl: FormControl,
+  placeholder?: string|'',
+  type: string,
+  label?: string,
+  options?: {optionName: string, value: string}[]
 }
-
 
 
 export class Login {

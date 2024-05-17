@@ -8,35 +8,44 @@
 <!-- LOGIN  -->
 <div class="parent">
             <h2>Connexion</h2>
-            <form action="#">
-                <div class="input-box">
-                    <label for="role">Rôle</label>
-                      <mat-form-field>
-                        <mat-label>Select an option</mat-label>
-                        <mat-select>
-                          <mat-option value="CLIENT">Client</mat-option>
-                          <mat-option value="ADMIN">Admin</mat-option>
-                          <mat-option value="AGENT_MICROFINANCE">Agent Microfinance</mat-option>
-                        </mat-select>
-                      </mat-form-field>
+            <form [formGroup] = "loginForm" (ngSubmit)="onSubmit()">
+                <!-- <ng-container > -->
+                <div *ngFor="let field of formMaker" class="input-box">
+                    <label [for]="field.key">{{field.name}}</label>
+                    <ng-container [ngSwitch]="field.type">
+                        <ng-container *ngSwitchCase="'select'">
+                                <mat-form-field>
+                                    <mat-label *ngIf = "field.label">{{field.label}}</mat-label>
+                                        <mat-select  [formControlName]="field.key">
+                                            <mat-option *ngFor="let option of field.options" [value]="option.value">{{option.optionName}}</mat-option>
+                                        </mat-select>
+                                </mat-form-field>
+                        </ng-container>
+
+                         <ng-container *ngSwitchCase="'password'">
+                                  <mat-form-field>
+                                        <input
+                                        [formControlName]="field.key" 
+                                        [name]="field.name" 
+                                        matInput 
+                                        equired 
+                                        placeholder="Entrer votre mot de passe" [type]="hide ? 'password' : 'text'">
+                                        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </mat-form-field>
+                                    <a href="#">Mot de passe oublié</a>
+                        </ng-container>
+
+                         <ng-container *ngSwitchDefault>
+                                <mat-form-field>
+                                    <mat-label *ngIf = "field.label">{{field.label}}</mat-label>
+                                        <input [formControlName]="field.key" [type]="field.type" 
+                                        [name]="field.name" matInput [placeholder]="field.placeholder? field.placeholder: ''">
+                                </mat-form-field>
+                        </ng-container>
+                    </ng-container>
                 </div>
                 <div class="input-box">
-                     <label for="email">Email</label>
-                    <mat-form-field>
-                        <mat-label>{{"example@gmail.com"}}</mat-label>
-                        <input type="email" name="email" matInput placeholder="Email">
-                    </mat-form-field>
-                </div>
-                <div class="input-box">
-                   <label for="password">Mot de passe</label>
-                    <mat-form-field>
-                        <input name="password" matInput required placeholder="Entrer votre mot de passe" [type]="hide ? 'password' : 'text'">
-                        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                      </mat-form-field>
-                    <a href="#">Mot de passe oublié</a>
-                </div>
-                <div class="input-box">
-                    <button type="button" class = 'btn-primary btn-login'>Se connecter</button>
+                    <button type="submit" class = 'btn-primary btn-login'>Se connecter</button>
                 </div>
                 <div class = "social">
                     <label for="">Ou se connecter avec</label>
@@ -44,7 +53,6 @@
                         <img src="../../../assets/icons/google-icon.png" alt="">
                     </button>
                 </div>
-                
             </form>
 </div>
 </section>

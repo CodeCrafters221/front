@@ -4,6 +4,7 @@ import { LoginComponent } from './login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedComponentsModule } from '../../shared-components/shared-components.module';
 import { MAT_MODULES } from '../../app.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const loginRoutes: Routes = [
   {
@@ -18,6 +19,7 @@ const loginRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(loginRoutes),
     SharedComponentsModule,
+    ReactiveFormsModule,
     ...MAT_MODULES,
   ],
   exports: [LoginComponent]
