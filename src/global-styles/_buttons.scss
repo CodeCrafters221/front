@@ -1,13 +1,16 @@
 button{
     text-transform: uppercase;
 }
+
+
 // YELLO BUTTON WITH SHADOW
 .btn-secondary{
     background-color: var(--secondary);
     color: white;
-    border-radius: 1rem;
+    border-radius: 15px;
     border: none;
     padding: 0.5rem 2rem;
+    min-height: 3rem;
     text-decoration: none;
     box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.2);
     &:hover{
@@ -41,4 +44,18 @@ button{
         background-color: var(--light);
         color: var(--primary);
     };
+}
+
+
+.btn-social{
+    @extend .btn-secondary;
+    background-color: var(--light);
+    display: flex;
+    min-width: 10rem;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        color: var(--primary);
+        background-color: var(--lighter);
+    }
 }

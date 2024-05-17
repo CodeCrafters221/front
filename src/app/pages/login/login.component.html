@@ -1,55 +1,48 @@
-<header class="header">
-    <div [routerLink]="'/home'" class="logo">
-        <img src="../../../assets/imgs/logo.png" alt="Microfinance digitale">
-    
-        <div class="mic">MOCROFINANCE DIGITALE</div>
-    </div>
-         <nav aria-label="Menu principal" class="navbar"> 
-             <ul>
-                 <li><a href="#">ACCUEIL</a></li>
-                 <li><a href="#">NOS SERVICES</a></li>
-                 <li><a href="#">CONTACTS</a></li>
-                 <li><a href="#">Á PROPOS DE NOUS</a></li>
-                 <li><a href="/register" class = 'btn-secondary'>Inscription</a></li>
-             </ul>
-         </nav>
- </header>
+<main>
+
+    <!-- HEADER -->
+<app-header></app-header>
+
+
+<section>
+<!-- LOGIN  -->
 <div class="parent">
-    <div class="container">
-        <div class="login-box">
             <h2>Connexion</h2>
             <form action="#">
                 <div class="input-box">
-                    <input type="email" name="emailID" placeholder="Nom d'utilisateur" required>
-                    <label for="email"></label>
+                    <label for="role">Rôle</label>
+                    <select name="role" id="role-id" placeholder = "Rôle" required>
+                        <option value="" selected hidden>Rôle</option>
+                        <option value="CLIENT">CLIENT</option>
+                        <option value="ADMIN">ADMIN</option>
+                        <option value="AGENT_MICROFINANCE">AGENT MICROFINANCE</option>
+                      </select>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="password" placeholder="Mot de passe" required>
-                    <label for="password"></label>
+                    <label for="email">Email</label>
+                    <input type="email" name="emailID" placeholder="Email" required>
                 </div>
-                <button type="button" class="button">connexion</button>
-                <div class="forgot-password">
+                <div class="input-box">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" name="password" placeholder="Mot de passe" required>
                     <a href="#">Mot de passe oublié</a>
                 </div>
+                <div class="input-box">
+                    <button type="button" class = 'btn-primary btn-login'>Se connecter</button>
+                </div>
+                <div class = "social">
+                    <label for="">Ou se connecter avec</label>
+                    <button type ="button" class="btn-social">
+                        <img src="../../../assets/icons/google-icon.png" alt="">
+                    </button>
+                </div>
+                
             </form>
-        </div>
-    </div>
 </div>
+</section>
+
+
 <!-- FOOTER -->
-<footer>
-    <p class="text-light">La plateforme de gestion des microfinances qui vous permet de réduire les risques liés aux prêts et d'offrir une meilleure sécurité client</p>
+<app-footer></app-footer>
 
-    <div class="follow-us">
-        <h3>SUIVEZ-NOUS</h3>
-        <ul>
-            <li><a href="#"><img src="../../../assets/icons/facebook.svg" alt=""></a></li>
-            <li><a href="#"><img src="../../../assets/icons/instagram.svg" alt=""></a></li>
-            <li><a href="#"><img src="../../../assets/icons/lnkedin.svg" alt=""></a></li>
-            <li><a href="#"><img src="../../../assets/icons/telegram.svg" alt=""></a></li>
-            <li><a href="#"><img src="../../../assets/icons/twitter.svg" alt=""></a></li>
-        </ul>
-    </div>
-
-    <p class = 'copyright'>© 2024 Microfinance Digitale. Tous droits réservés.</p>
-
-</footer>
+</main>
