@@ -1,19 +1,5 @@
 <main class="main">
-    <header class="header">
-       <div [routerLink]="'/home'" class="logo">
-            <img src="../../../assets/imgs/logo.png" alt="Microfinance digitale">
-        </div>
-            <nav aria-label="Menu principal" class="navbar"> 
-                <ul>
-                    <li><a href="#">ACCUEIL</a></li>
-                    <li><a href="#">NOS SERVICES</a></li>
-                    <li><a href="#">CONTACTS</a></li>
-                    <li><a href="#">Á PROPOS DE NOUS</a></li>
-                    <li><a href="/login" class = 'btn-secondary'>SE CONNECTER</a></li>
-                </ul>
-            </nav>
-    </header>
-
+    <app-header></app-header>
     <!-- FIRST SECTION -->
     <section class="landing">
         <div class="landing-text">
@@ -120,32 +106,5 @@
 
 
     <!-- FOOTER -->
-    <footer>
-        <nav class ='navbar' aria-label="Menu secondaire">
-            <div [routerLink] = "'/home'" class = 'logo'>
-                <img src="../../../assets/imgs/logo.png" alt="">
-            </div>
-            <ul>
-                <li><a href="#">ACCUEIL</a></li>
-                <li><a href="#">NOS SERVICES</a></li>
-                <li><a href="#">CONTACTS</a></li>
-                <li><a href="#">Á PROPOS DE NOUS</a></li>
-            </ul>
-        </nav>
-        <p class="text-light">La plateforme de gestion des microfinances qui vous permet de réduire les risques liés aux prêts et d'offrir une meilleure sécurité client</p>
-
-        <div class="follow-us">
-            <h3>SUIVEZ-NOUS</h3>
-            <ul>
-                <li><a href="#"><img src="../../../assets/icons/facebook.svg" alt=""></a></li>
-                <li><a href="#"><img src="../../../assets/icons/instagram.svg" alt=""></a></li>
-                <li><a href="#"><img src="../../../assets/icons/lnkedin.svg" alt=""></a></li>
-                <li><a href="#"><img src="../../../assets/icons/telegram.svg" alt=""></a></li>
-                <li><a href="#"><img src="../../../assets/icons/twitter.svg" alt=""></a></li>
-            </ul>
-        </div>
-
-        <p class = 'copyright'>© 2024 Microfinance Digitale. Tous droits réservés.</p>
-
-    </footer>
+    <app-footer></app-footer>
 </main>

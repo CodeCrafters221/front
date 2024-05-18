@@ -1,6 +1,94 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// CUSTOM PALETTES 
+$custom-primary-map: (
+    50 : #e2f3ff,
+    100 : #b9e1ff,
+    200 : #86ceff,
+    300 : #41bbff,
+    400 : #00aaff,
+    500 : #0099ff,
+    600 : #008aff,
+    700 : #0075ff,
+    800 : #0062ff,
+    900 : #263be0,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+    )
+);
+$custom-secondary-map: (
+    50 : #fffde9,
+    100 : #fff9c7,
+    200 : #fff4a3,
+    300 : #ffef7f,
+    400 : #ffea63,
+    500 : #ffe44a,
+    600 : #ffd84c,
+    700 : #ffc145,
+    800 : #fbaa3e,
+    900 : #f48333,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+    )
+);
+
+
+
+$codecraft_frontend-primary: mat.define-palette($custom-primary-map);
+$codecraft_frontend-accent: mat.define-palette($custom-secondary-map); 
+$codecraft_frontend-warn: mat.define-palette(mat.$red-palette); // The warn palette is optional (defaults to red).
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$codecraft_frontend-theme: mat.define-light-theme((
+  color: (
+    primary: $codecraft_frontend-primary,
+    accent: $codecraft_frontend-accent,
+    warn: $codecraft_frontend-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($codecraft_frontend-theme);
+
 // CES PARTIELS PERMETTENT D'ÉVITER D'EMCOMBRER LE FICHIER STYLE PRINCIPAL
 @import "./global-styles/global";
 @import "./global-styles/buttons";
+@import "./global-styles/text-styles";
+@import "./global-styles/fields";
+
+
+
 
  // FONTS / POLICE DE TEXTE
   @font-face {
@@ -27,6 +115,7 @@
     --radial: radial-gradient(58.43% 103.88% at 56.74% 50%, #0085FF 0%, #003465 100%);
     --light: #ffffff;
     --lighter: #f5f5f5;
+    --light-grey: lightgrey;
 
 
     --success: #22C55E;
@@ -45,10 +134,6 @@
   }
 
 
-  // FONT SIZES
-  h1{font-size: 4rem;}
-  h2{font-size: 3rem;}
-
   // TEXT-COLORS
   .text-light{color: rgba(255,255,255,0.4)}
 
@@ -57,3 +142,13 @@
     height: 100vh;
     width: 100vw;
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+ .mat-mdc-text-field-wrapper{
+  border-radius: 15px !important;
+}
+
+app-form-template{
+  width: 100%;
+}

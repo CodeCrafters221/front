@@ -1,0 +1,26 @@
+.header{
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+     .logo{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        cursor: pointer;
+        img{
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 2px;
+        }
+        &::after{
+            content: "MICROFINANCE DIGITALE";
+            color: var(--light);
+        }
+    }
+        
+    
+}

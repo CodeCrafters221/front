@@ -1,0 +1,50 @@
+// FOOTER
+footer{
+    background-color: var(--primary);
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .navbar{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .logo{
+            display: flex;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    .follow-us{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h3{text-align: center;}
+        margin-top: 1rem;
+        ul{
+            list-style: none;
+            display: flex;
+            img{margin: 0.5rem;}
+            img:hover{
+                transform: scale(1.5);
+                transition: ease-in-out 0.1s;
+            }
+        }
+
+
+    }
+    h3{
+        color: var(--light);
+        text-align: center;
+    }
+    .copyright{
+        color: var(--light);
+        position: relative;
+        top: 2rem;
+    }
+
+}

@@ -1,38 +1,12 @@
 
 // MAIN SECTION
-.main{
+.main, main{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: var(--radial);
     width: 100%;
-    .header{
-        width: 100%;
-        height: fit-content;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: .5rem 1rem;
-         .logo{
-            display: flex;
-            flex-direction: column;
-            width: fit-content;
-            cursor: pointer;
-            img{
-                height: 40px;
-                width: auto;
-                object-fit: contain;
-                margin-bottom: 2px;
-            }
-            &::after{
-                content: "MICROFINANCE DIGITALE";
-                color: var(--light);
-            }
-        }
-            
-        
-    }
 }
 
 
@@ -59,7 +33,7 @@
             width: 80%;
             li{
                 list-style: none;
-                margin-right: 1rem;
+                // margin-right: 1rem;
                 transition: all .5s ease-in-out;
                 padding: 12px;
                 border-radius: 15px;

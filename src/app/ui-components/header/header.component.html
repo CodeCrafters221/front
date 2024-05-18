@@ -1,0 +1,15 @@
+
+<header class="header">
+    <div [routerLink]="'/home'" class="logo">
+         <img src="../../../assets/imgs/logo.png" alt="Microfinance digitale">
+     </div>
+         <nav aria-label="Menu principal" class="navbar"> 
+             <ul>
+                 <li><a href="#">ACCUEIL</a></li>
+                 <li><a href="#">NOS SERVICES</a></li>
+                 <li><a href="#">CONTACTS</a></li>
+                 <li><a href="#">Á PROPOS DE NOUS</a></li>
+                 <li [hidden] = "isLogging"><a href="/login" class = 'btn-secondary'>SE CONNECTER</a></li>
+             </ul>
+         </nav>
+ </header>
