@@ -20,71 +20,12 @@ section{
             background: rgba(175, 178, 183, 0.28);
             backdrop-filter: blur(12.5px);
             border-radius: 40px;
-           .btn-login{
-            width: 100%;
-            margin-bottom: 2rem;
-           }
-
-           form{
-            width: 80%;
-            @include flexed(column);
-            .input-box {
-                position: relative;
-                margin: 7px auto;
-                width: 100%;
-                label {
-                    display: block;
-                    left: 20px;
-                    size: 1em;
-                    color: #fff;
-                    margin-bottom: 7px;
-                    pointer-events: none;
-                    transition: .5s ease;
-                }
-                a {
-                    font-size: .85em;
-                    color: #fff;
-                    display: block;
-                    text-decoration: none;
-                    margin-top: 7px;
-                    &:hover {
-                        text-decoration: underline;
-                }
-            }
-            mat-form-field {width: 100%}
-  
-    }
-
             .social{
                 margin-top: 2rem;
                 @include flexed(column);
                 label{color: var(--light)
                 }
             }
-    }
-
 
         }
 }
-
-
-
-
-
-.input-box input:focus,
-.input-box input:valid {
-    border-color: #0ef;
-}
-
-
-.input-box input:focus~label .input-box input:valid~label {
-    top: 1px;
-    font-size: .8em;
-    background: #1f293a;
-    padding: 0 6px;
-    color: #0ef;
-}
-
-
-
-

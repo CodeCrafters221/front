@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { RouterModule, Routes } from '@angular/router';
-import { SharedComponentsModule } from '../../shared-components/shared-components.module';
-import { MAT_MODULES } from '../../app.module';
+import { UiComponentsModule } from '../../ui-components/ui-components.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../../shared/shared.module';
 
 const loginRoutes: Routes = [
   {
@@ -18,9 +18,9 @@ const loginRoutes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(loginRoutes),
-    SharedComponentsModule,
+    UiComponentsModule,
     ReactiveFormsModule,
-    ...MAT_MODULES,
+    SharedModule,
   ],
   exports: [LoginComponent]
 })

@@ -8,52 +8,14 @@
 <!-- LOGIN  -->
 <div class="parent">
             <h2>Connexion</h2>
-            <form [formGroup] = "loginForm" (ngSubmit)="onSubmit()">
-                <!-- <ng-container > -->
-                <div *ngFor="let field of formMaker" class="input-box">
-                    <label [for]="field.key">{{field.name}}</label>
-                    <ng-container [ngSwitch]="field.type">
-                        <ng-container *ngSwitchCase="'select'">
-                                <mat-form-field>
-                                    <mat-label *ngIf = "field.label">{{field.label}}</mat-label>
-                                        <mat-select  [formControlName]="field.key">
-                                            <mat-option *ngFor="let option of field.options" [value]="option.value">{{option.optionName}}</mat-option>
-                                        </mat-select>
-                                </mat-form-field>
-                        </ng-container>
-
-                         <ng-container *ngSwitchCase="'password'">
-                                  <mat-form-field>
-                                        <input
-                                        [formControlName]="field.key" 
-                                        [name]="field.name" 
-                                        matInput 
-                                        equired 
-                                        placeholder="Entrer votre mot de passe" [type]="hide ? 'password' : 'text'">
-                                        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                                    </mat-form-field>
-                                    <a href="#">Mot de passe oublié</a>
-                        </ng-container>
-
-                         <ng-container *ngSwitchDefault>
-                                <mat-form-field>
-                                    <mat-label *ngIf = "field.label">{{field.label}}</mat-label>
-                                        <input [formControlName]="field.key" [type]="field.type" 
-                                        [name]="field.name" matInput [placeholder]="field.placeholder? field.placeholder: ''">
-                                </mat-form-field>
-                        </ng-container>
-                    </ng-container>
-                </div>
-                <div class="input-box">
-                    <button type="submit" class = 'btn-primary btn-login'>Se connecter</button>
-                </div>
-                <div class = "social">
+            <app-form-template [submitLabel]="'Se connecter'" (submitEvent)="onSubmit($event)" [formTemplate]="loginForm"  [formMaker] = "formMaker">
+                <div social class = "social">
                     <label for="">Ou se connecter avec</label>
                     <button type ="button" class="btn-social">
                         <img src="../../../assets/icons/google-icon.png" alt="">
                     </button>
                 </div>
-            </form>
+            </app-form-template>
 </div>
 </section>
 

@@ -18,7 +18,7 @@ export class LoginComponent {
   get email() { return this.loginForm.get('email'); }
   get password() { return this.loginForm.get('password'); }
 
-  formMaker : FormField[] = [
+  formMaker : any[] = [
     {key: 'role', name: 'Rôle', type: 'select', label: "Quel est votre rôle", formControl: this.role as FormControl, 
     options: [ {optionName: 'Admin', value: 'ADMIN'}, {optionName: 'Agent Microfinance', value: 'AGENT_MICROFINANCE'}, {optionName: 'Client', value: 'CLIENT'} ]},
     {key: 'email', name: 'Email', label: "example@gmail.com", type: 'email',formControl: this.email as FormControl},
@@ -35,21 +35,13 @@ export class LoginComponent {
 
 
 
-  onSubmit(){
-    console.log("VALUE OF THE FORM: ", this.loginForm.value);
+  onSubmit(event: any){
+    console.log("LOGIN COMPONENT: value of the form ", event);
   }
 }
 
 
-export interface FormField {
-  key: string,
-  name: string,
-  formControl: FormControl,
-  placeholder?: string|'',
-  type: string,
-  label?: string,
-  options?: {optionName: string, value: string}[]
-}
+
 
 
 export class Login {

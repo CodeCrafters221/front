@@ -1,0 +1,46 @@
+<form [formGroup] = "formTemplate" (ngSubmit)="submitEvent.emit(formTemplate.value)">
+    <div *ngFor="let field of formMaker" class="input-box">
+        <label [for]="field.key">{{field.name}}</label>
+        <ng-container [ngSwitch]="field.type">
+
+<!------------------------------SELECT FIELD ------------------------------>
+            <ng-container *ngSwitchCase="'select'">
+                    <mat-form-field>
+                        <mat-label *ngIf = "field.label">{{field.label}}</mat-label>
+                            <mat-select  [formControlName]="field.key">
+                                <mat-option *ngFor="let option of field.options" [value]="option.value">{{option.optionName}}</mat-option>
+                            </mat-select>
+                    </mat-form-field>
+            </ng-container>
+<!------------------------------PASSWORD FIELD ------------------------------>
+             <ng-container *ngSwitchCase="'password'">
+                      <mat-form-field>
+                            <input
+                            [formControlName]="field.key" 
+                            [name]="field.name" 
+                            matInput 
+                            equired 
+                            placeholder="Entrer votre mot de passe" [type]="hidePassword ? 'password' : 'text'">
+                            <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </mat-form-field>
+                        <a href="#">Mot de passe oublié</a>
+            </ng-container>
+
+<!------------------------------ TEXT, EMAIL, FIELD ------------------------------>
+
+             <ng-container *ngSwitchDefault>
+                    <mat-form-field>
+                        <mat-label *ngIf = "field.label">{{field.label}}</mat-label>
+                            <input [formControlName]="field.key" [type]="field.type" 
+                            [name]="field.name" matInput [placeholder]="field.placeholder? field.placeholder: ''">
+                    </mat-form-field>
+            </ng-container>
+        </ng-container>
+    </div>
+
+<!------------------------------BUTTONS  ------------------------------>
+                <div class="input-box">
+                    <button [disabled]="formTemplate.invalid"  submit type = 'submit' class = 'btn-primary btn-login'>{{submitLabel}}</button>
+                </div>
+    <ng-content select="[social]"></ng-content>
+</form>

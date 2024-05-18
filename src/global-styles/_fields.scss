@@ -13,3 +13,39 @@ input, select {
     }
 
 }
+
+.input-box {
+    position: relative;
+    margin: 7px auto;
+    width: 100%;
+    label {
+        display: block;
+        left: 20px;
+        size: 1em;
+        color: #fff;
+        margin-bottom: 7px;
+        pointer-events: none;
+        transition: .5s ease;
+    }
+    a {
+        font-size: .85em;
+        color: #fff;
+        display: block;
+        text-decoration: none;
+        margin-top: 7px;
+        &:hover {
+            text-decoration: underline;
+    }
+}
+mat-form-field {width: 100%}
+
+    input:focus, input:valid {border-color: #0ef}
+
+input:focus~label input:valid~label {
+    top: 1px;
+    font-size: .8em;
+    background: #1f293a;
+    padding: 0 6px;
+    color: #0ef;
+}
+}

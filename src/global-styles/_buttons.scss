@@ -16,6 +16,13 @@ button{
     &:hover{
         background-color: var(--secondary-dark);
     };
+    &:disabled{
+        opacity: 0.5;
+        &:hover{
+        background-color: var(--secondary);
+        }
+    }
+    
 }
 
 
@@ -27,6 +34,12 @@ button{
     &:hover{
         background-color: var(--primary-light);
     };
+    &:disabled{
+        opacity: 0.5;
+        &:hover{
+        background-color: var(--primary);
+        }
+    }
 }
 
 
@@ -44,8 +57,18 @@ button{
         background-color: var(--light);
         color: var(--primary);
     };
+    &:disabled{
+        opacity: 0.5;
+        &:hover{
+        background-color: transparent;
+        }
+    }
+    
 }
 
+
+
+// GOOGLE SOCIAL BUTTON
 
 .btn-social{
     @extend .btn-secondary;
