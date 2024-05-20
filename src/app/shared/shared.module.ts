@@ -4,6 +4,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { ReactiveFormsModule } from '@angular/forms';
 
 export const MAT_MODULES = [
@@ -11,6 +13,8 @@ export const MAT_MODULES = [
   MatInputModule,
   MatIconModule,
   MatSelectModule,
+  MatCardModule,
+  MatToolbarModule
 ]
 
 
