@@ -46,6 +46,10 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+//implement tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 // CUSTOM PALETTES 
 $custom-primary-map: (
     50 : #e2f3ff,

@@ -20,7 +20,7 @@ export class LoginComponent {
 
   formMaker : any[] = [
     {key: 'role', name: 'Rôle', type: 'select', label: "Quel est votre rôle", formControl: this.role as FormControl, 
-    options: [ {optionName: 'Admin', value: 'ADMIN'}, {optionName: 'Agent Microfinance', value: 'AGENT_MICROFINANCE'}, {optionName: 'Client', value: 'CLIENT'} ]},
+    options: [ {optionName: 'Client', value: 'CLIENT'}, {optionName: 'Agent Microfinance', value: 'AGENT_MICROFINANCE'}, {optionName: 'Client', value: 'CLIENT'} ]},
     {key: 'email', name: 'Email', label: "example@gmail.com", type: 'email',formControl: this.email as FormControl},
     {key: 'password', name: 'Mot de passe', type: 'password', formControl: this.password as FormControl},
   ]
