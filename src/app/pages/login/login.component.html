@@ -1,26 +1,47 @@
 <main>
-
     <!-- HEADER -->
-<app-header></app-header>
-
-
-<section>
-<!-- LOGIN  -->
-<div class="parent">
-            <h2>Connexion</h2>
-            <app-form-template [submitLabel]="'Se connecter'" (submitEvent)="onSubmit($event)" [formTemplate]="loginForm"  [formMaker] = "formMaker">
-                <div social class = "social">
-                    <label for="">Ou se connecter avec</label>
-                    <button type ="button" class="btn-social">
-                        <img src="../../../assets/icons/google-icon.png" alt="">
-                    </button>
-                </div>
-            </app-form-template>
-</div>
-</section>
-
-
-<!-- FOOTER -->
-<app-footer></app-footer>
-
-</main>
+    <app-header></app-header>
+  
+    <section>
+      <!-- LOGIN -->
+      <div class="parent">
+        <h2>Connexion</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div *ngFor="let field of formMaker">
+            <label [for]="field.key">{{ field.name }}</label>
+            <select *ngIf="field.type === 'select'" [id]="field.key" [formControlName]="field.key">
+              <option *ngFor="let option of field.options" [value]="option.value">{{ option.optionName }}</option>
+            </select>
+            <input
+              *ngIf="field.type !== 'select'"
+              [type]="field.type"
+              [id]="field.key"
+              [formControlName]="field.key"
+              [placeholder]="field.label"
+            />
+            <div *ngIf="field.formControl?.invalid && (field.formControl?.dirty || field.formControl?.touched)">
+              <div *ngIf="field.formControl?.errors?.['required']">{{ field.name }} est requis.</div>
+              <div *ngIf="field.formControl?.errors?.['email']">Email non valide.</div>
+              <div *ngIf="field.formControl?.errors?.['minlength']">Mot de passe doit contenir au moins 6 caractères.</div>
+            </div>
+          </div>
+  
+          <button type="submit" [disabled]="loginForm.invalid">{{ submitLabel }}</button>
+  
+          <div social class="social">
+            <label for="">Ou se connecter avec</label>
+            <button type="button" class="btn-social">
+              <img src="../../../assets/icons/google-icon.png" alt="Google Icon">
+            </button>
+          </div>
+        </form>
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+      </div>
+    </section>
+  
+    <!-- FOOTER -->
+    <app-footer></app-footer>
+  </main>
+  

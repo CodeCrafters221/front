@@ -6,7 +6,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { UiComponentsModule } from './ui-components/ui-components.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SharedModule } from './shared/shared.module';
-
+import { AuthService } from './auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,17 +15,21 @@ import { SharedModule } from './shared/shared.module';
   declarations: [
     AppComponent,
     HomeComponent,
+    
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,  
     AppRoutingModule,
     UiComponentsModule,
     SharedModule,
+    HttpClientModule
   ],
   providers: [
+    [AuthService],
     provideClientHydration(),
     provideAnimationsAsync()
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
