@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from "@angular/core";
+import { createPopper } from "@popperjs/core";
 
 @Component({
   selector: 'app-user-dropdown',
@@ -20,7 +21,7 @@ export class UserDropdownComponent implements AfterViewInit {
       }
     );
   }
-  toggleDropdown(event: { preventDefault: () => void; }) {
+  toggleDropdown(event:any) {
     event.preventDefault();
     if (this.dropdownPopoverShow) {
       this.dropdownPopoverShow = false;
@@ -28,8 +29,5 @@ export class UserDropdownComponent implements AfterViewInit {
       this.dropdownPopoverShow = true;
     }
   }
-}
-function createPopper(nativeElement: any, nativeElement1: any, arg2: { placement: string; }) {
-  throw new Error('Function not implemented.');
 }
 
