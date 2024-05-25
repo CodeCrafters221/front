@@ -20,6 +20,7 @@ import { NavbarComponent } from './components/navbar/client-navbar/navbar.compon
 import { NotificationDropdownComponent } from './components/dropdown/notification-dropdown/notification-dropdown.component';
 import { UserDropdownComponent } from './components/dropdown/user-dropdown/user-dropdown.component';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 export const MAT_MODULES = [
   MatFormFieldModule,
@@ -49,6 +50,7 @@ export const MAT_MODULES = [
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
     RouterModule,
 ...MAT_MODULES
   ],
@@ -68,4 +70,6 @@ export const MAT_MODULES = [
     UserDropdownComponent
   ]
 })
-export class SharedModule { }
+export class SharedModule { 
+
+}
