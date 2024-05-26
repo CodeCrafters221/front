@@ -1,6 +1,6 @@
 <!-- Navbar -->
 <nav
-  class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4"
+  class="shadow-2xl absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center px-0 py-4"
 >
   <div
     class="w-full mx-autp items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4"
@@ -11,24 +11,15 @@
       href="#pablo"
       >Mon Compte</a
     >
-    <!-- Form -->
-    <form
-      class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
-    >
-      <div class="relative flex w-full flex-wrap items-stretch">
-        <span
-          class="z-10 h-full leading-snug font-normal absolute text-center text-lightBlue-600 absolute bg-transparent rounded  items-center justify-center w-8 pl-3 py-3"
-          ><i class="fas fa-bell"></i
-        ></span>
-        <!-- <input
-          type="text"
-          placeholder="Search here..."
-          class="border-0 px-3 py-3 placeholder-lightBlue-600-300 text-lightBlue-600-600 relative bg-blueBlue-600 bg-blueBlue-600 rounded text-sm shadow outline-none focus:outline-none focus:ring w-full pl-10"
-        /> -->
-      </div>
-    </form>
     <!-- User -->
-    <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
+    <ul class="flex-col md:flex-row list-none items-center hidden md:flex pl-10">
+      <div class="relative flex w-full flex-wrap items-start">
+        <span
+        class="border-0  px-3 mx-10 py-3  relative  bg-gray-600 rounded shadow outline-none focus:outline-none focus:ring pl-3"
+        ><i class="fas fa-regular fa-bell"></i
+        ></span>
+      </div>
+
       <app-user-dropdown class="block"></app-user-dropdown>
     </ul>
   </div>
