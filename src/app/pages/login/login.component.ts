@@ -11,7 +11,6 @@ import { AuthService } from '../../auth.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  formMaker: any[];
   submitLabel: string = 'Se connecter';
   errorMessage: string | null = null;
 
@@ -44,7 +43,6 @@ export class LoginComponent implements OnInit {
   get email() { return this.loginForm.get('email'); }
   get password() { return this.loginForm.get('password'); }
 
-<<<<<<< HEAD
   formMaker : any[] = [
     {key: 'role', name: 'Rôle', type: 'select', label: "Quel est votre rôle", formControl: this.role as FormControl, 
     options: [ {optionName: 'Client', value: 'CLIENT'}, {optionName: 'Agent Microfinance', value: 'AGENT_MICROFINANCE'}, {optionName: 'Client', value: 'CLIENT'} ]},
@@ -52,37 +50,17 @@ export class LoginComponent implements OnInit {
     {key: 'password', name: 'Mot de passe', type: 'password', formControl: this.password as FormControl},
   ]
 
-  login: Login ;
   hide: boolean = true 
-  constructor(){
-    this.login = new Login() ;
-  }
-
-
+ 
 
 
 
   onSubmit(event: any){
     console.log("LOGIN COMPONENT: value of the form ", event);
-  }
-}
-
-
-
-
-
-export class Login {
-  email: string ;
-  password: string ;
-
-  constructor(){
-    this.email = '' ;
-    this.password = '' ;
-=======
-  onSubmit(): void {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-      this.authService.login(email, password).subscribe(
+      this.authService.login(email, password)
+      .subscribe(
         success => {
           this.router.navigate(['/dashboard']);
         },
@@ -93,6 +71,6 @@ export class Login {
     } else {
       this.errorMessage = 'Veuillez remplir correctement le formulaire.';
     }
->>>>>>> 35f09f1ca0c43c7fcf3284d11812201543db8d25
   }
 }
+
