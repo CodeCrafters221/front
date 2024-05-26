@@ -79,10 +79,10 @@
       <!-- Navigation -->
 
       <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-        <li class="items-center">
+        <li class="items-center bg-transparent shadow-lg shadow-white-300/50">
           <a
             [routerLink]="['/client/dashboard']"
-            class="text-xs uppercase py-3 font-bold block"
+            class="text-xs uppercase py-3 font-bold block "
             routerLinkActive
             #clientDashboard="routerLinkActive"
             [ngClass]="
@@ -124,7 +124,7 @@
         </li>
 
         <li class="items-center">
-          <button class="bg-slate-900">          <a
+            <a
             [routerLink]="['/client/settings']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
@@ -144,8 +144,6 @@
             Suivi de mes prêts
           </a>
 
-
-          </button>
         </li>
 
         <li class="items-center">
