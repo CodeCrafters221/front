@@ -9,6 +9,7 @@ import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,13 +20,15 @@ import { AppRoutingModule } from './app-routing.module';
     UiComponentsModule,
     AppRoutingModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+  
   ],
   providers: [
     AuthService,
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } 
