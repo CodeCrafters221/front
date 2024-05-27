@@ -1,3 +1,4 @@
+import { FormField } from './../../ui-components/form-template/form-template.component';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,50 +11,41 @@ import { AuthService } from '../../auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
+  // -------------------------------------- VARIABLES -------------------------------------------
+  loginForm: FormGroup = new FormGroup({});
   submitLabel: string = 'Se connecter';
   errorMessage: string | null = null;
+  formMaker!: FormField[]
 
+
+
+  // --------------------------------------CONSTRUCTOR -------------------------------------------
   constructor(
     private router: Router,
     private authService: AuthService,
   ) {
     this.loginForm = new FormGroup({
-      role: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
     });
 
     this.formMaker = [
-      { key: 'role', name: 'Rôle', type: 'select', label: "Quel est votre rôle", formControl: this.role as FormControl, 
-        options: [
-          { optionName: 'Admin', value: 'ADMIN' },
-          { optionName: 'Agent Microfinance', value: 'AGENT_MICROFINANCE' },
-          { optionName: 'Client', value: 'CLIENT' }
-        ] 
-      },
-      { key: 'email', name: 'Email', label: "example@gmail.com", type: 'email', formControl: this.email as FormControl },
-      { key: 'password', name: 'Mot de passe', type: 'password', formControl: this.password as FormControl }
-    ];
+      {key: 'email', name: 'Email', label: "example@gmail.com", type: 'email',formControl: this.loginForm?.get('email') as FormControl},
+      {key: 'password', name: 'Mot de passe', type: 'password', formControl: this.loginForm?.get('password') as FormControl},
+    ]
   }
 
+
+
+  // -------------------------------------- NG ON INIT METHOD -------------------------------------------
   ngOnInit(): void { }
 
-  get role() { return this.loginForm.get('role'); }
-  get email() { return this.loginForm.get('email'); }
-  get password() { return this.loginForm.get('password'); }
-
-  formMaker : any[] = [
-    {key: 'role', name: 'Rôle', type: 'select', label: "Quel est votre rôle", formControl: this.role as FormControl, 
-    options: [ {optionName: 'Client', value: 'CLIENT'}, {optionName: 'Agent Microfinance', value: 'AGENT_MICROFINANCE'}, {optionName: 'Client', value: 'CLIENT'} ]},
-    {key: 'email', name: 'Email', label: "example@gmail.com", type: 'email',formControl: this.email as FormControl},
-    {key: 'password', name: 'Mot de passe', type: 'password', formControl: this.password as FormControl},
-  ]
-
-  hide: boolean = true 
- 
 
 
+
+
+
+  // -------------------------------------- ON SUBMIT METHOD -------------------------------------------
 
   onSubmit(event: any){
     console.log("LOGIN COMPONENT: value of the form ", event);

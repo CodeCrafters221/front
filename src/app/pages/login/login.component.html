@@ -1,12 +1,20 @@
 <main>
     <!-- HEADER -->
     <app-header></app-header>
-  
+
     <section>
       <!-- LOGIN -->
       <div class="parent">
         <h2>Connexion</h2>
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)">
+        <app-form-template [submitLabel]="'Se connecter'" (submitEvent)="onSubmit($event)" [formTemplate]="loginForm"  [formMaker] = "formMaker">
+          <div social class = "social">
+              <label for="">Ou se connecter avec</label>
+              <button type ="button" class="btn-social">
+                  <img src="../../../assets/icons/google-icon.png" alt="">
+              </button>
+          </div>
+      </app-form-template>
+        <!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)">
           <div *ngFor="let field of formMaker">
             <label [for]="field.key">{{ field.name }}</label>
             <select *ngIf="field.type === 'select'" [id]="field.key" [formControlName]="field.key">
@@ -25,9 +33,9 @@
               <div *ngIf="field.formControl?.errors?.['minlength']">Mot de passe doit contenir au moins 6 caractères.</div>
             </div>
           </div>
-  
+
           <button type="submit" [disabled]="loginForm.invalid">{{ submitLabel }}</button>
-  
+
           <div social class="social">
             <label for="">Ou se connecter avec</label>
             <button type="button" class="btn-social">
@@ -37,11 +45,10 @@
         </form>
         <div *ngIf="errorMessage" class="error-message">
           {{ errorMessage }}
-        </div>
+        </div> -->
       </div>
     </section>
-  
+
     <!-- FOOTER -->
     <app-footer></app-footer>
   </main>
-  

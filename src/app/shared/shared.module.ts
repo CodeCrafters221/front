@@ -70,6 +70,6 @@ export const MAT_MODULES = [
     UserDropdownComponent
   ]
 })
-export class SharedModule { 
+export class SharedModule {
 
 }

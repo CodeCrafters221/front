@@ -18,6 +18,10 @@ export class FormTemplateComponent {
 
   constructor() {}
 
+
+  viewInput(field: FormField){
+    console.log('FORM TEMPLATE --> USER IS CHANGING FIELD', field.formControl)
+  }
 }
 
 
