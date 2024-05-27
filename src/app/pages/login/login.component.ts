@@ -1,7 +1,10 @@
+import { FormField } from './../../ui-components/form-template/form-template.component';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth.service';
+import { User, UserRole } from 'app/models/user.interface';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -10,89 +13,84 @@ import { AuthService } from '../../auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
-  formMaker: any[];
+  // -------------------------------------- VARIABLES -------------------------------------------
+  loginForm: FormGroup = new FormGroup({});
   submitLabel: string = 'Se connecter';
-  errorMessage: string | null = null;
+  formMaker!: FormField[]
 
+
+
+  // --------------------------------------CONSTRUCTOR -------------------------------------------
   constructor(
     private router: Router,
     private authService: AuthService,
+    private snackBar : MatSnackBar,
   ) {
+
+    // FORM GROUP FOR LOGIN PAGE
     this.loginForm = new FormGroup({
-      role: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
     });
 
+    // FORM MAKER TO BE PASSED TO TEMPLATE
     this.formMaker = [
-      { key: 'role', name: 'Rôle', type: 'select', label: "Quel est votre rôle", formControl: this.role as FormControl, 
-        options: [
-          { optionName: 'Admin', value: 'ADMIN' },
-          { optionName: 'Agent Microfinance', value: 'AGENT_MICROFINANCE' },
-          { optionName: 'Client', value: 'CLIENT' }
-        ] 
-      },
-      { key: 'email', name: 'Email', label: "example@gmail.com", type: 'email', formControl: this.email as FormControl },
-      { key: 'password', name: 'Mot de passe', type: 'password', formControl: this.password as FormControl }
-    ];
+      {key: 'email', name: 'Email', label: "example@gmail.com", type: 'email',formControl: this.loginForm?.get('email') as FormControl},
+      {key: 'password', name: 'Mot de passe', type: 'password', formControl: this.loginForm?.get('password') as FormControl},
+    ]
   }
 
+
+
+  // -------------------------------------- NG ON INIT METHOD -------------------------------------------
   ngOnInit(): void { }
 
-  get role() { return this.loginForm.get('role'); }
-  get email() { return this.loginForm.get('email'); }
-  get password() { return this.loginForm.get('password'); }
-
-<<<<<<< HEAD
-  formMaker : any[] = [
-    {key: 'role', name: 'Rôle', type: 'select', label: "Quel est votre rôle", formControl: this.role as FormControl, 
-    options: [ {optionName: 'Client', value: 'CLIENT'}, {optionName: 'Agent Microfinance', value: 'AGENT_MICROFINANCE'}, {optionName: 'Client', value: 'CLIENT'} ]},
-    {key: 'email', name: 'Email', label: "example@gmail.com", type: 'email',formControl: this.email as FormControl},
-    {key: 'password', name: 'Mot de passe', type: 'password', formControl: this.password as FormControl},
-  ]
-
-  login: Login ;
-  hide: boolean = true 
-  constructor(){
-    this.login = new Login() ;
-  }
 
 
 
 
 
+  // -------------------------------------- ON SUBMIT METHOD -------------------------------------------
   onSubmit(event: any){
     console.log("LOGIN COMPONENT: value of the form ", event);
-  }
-}
-
-
-
-
-
-export class Login {
-  email: string ;
-  password: string ;
-
-  constructor(){
-    this.email = '' ;
-    this.password = '' ;
-=======
-  onSubmit(): void {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-      this.authService.login(email, password).subscribe(
-        success => {
-          this.router.navigate(['/dashboard']);
+      this.authService.login(email, password)
+      .subscribe({next: success => {
+        console.log('LOGIN PAGE: login successful: ', success)
+        // REDIRIGER UTILISATEUR EN FONCTION DE SON ROLE
+        const user = success['user'] as User
+        var pathToRedirect = user.role == UserRole.ADMIN? '/admin':
+                             user.role == UserRole.CLIENT? '/client':
+                             user.role == UserRole.AGENT? '/agent':
+                             ''
+            this.router.navigate([pathToRedirect]).catch(er=>{
+              console.error('LOGIN PAGE: error navigating to page: ', er)
+            })
+        // STOCKER INFORMATIONS DE L'UTILISATEUR
+        this.authService.globalUser = user
         },
-        error => {
-          this.errorMessage = 'Email ou mot de passe non valide';
+        error: e => {
+          console.error('LOGIN PAGE: error login to server: ', e )
+          if(e.error.statusCode == 401){
+            this.displayError("informations d'identification non valides. Veuillez fournir un email et un mot de passe valide")
+          } else {
+            this.displayError("Erreur de connexion! Veuillez réessayer plus tard")
+          }
         }
-      );
+    });
     } else {
-      this.errorMessage = 'Veuillez remplir correctement le formulaire.';
+      this.displayError('Veuillez remplir correctement le formulaire.')
     }
->>>>>>> 35f09f1ca0c43c7fcf3284d11812201543db8d25
+
+  }
+
+
+  private  displayError(errorMessage: string){
+    if(!errorMessage || errorMessage == '') return
+    this.snackBar.open(errorMessage, 'OK', {
+      duration: 10000,
+    })
   }
 }
+

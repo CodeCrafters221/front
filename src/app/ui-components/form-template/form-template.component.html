@@ -10,20 +10,22 @@
                             <mat-select  [formControlName]="field.key">
                                 <mat-option *ngFor="let option of field.options" [value]="option.value">{{option.optionName}}</mat-option>
                             </mat-select>
+                            <mat-error *ngIf="field.formControl?.invalid && (field.formControl?.dirty || field.formControl?.touched)">
+                              <div *ngIf="field.formControl?.errors?.['required']">le champ "{{ field.name }}"" est requis.</div>
+                            </mat-error>
                     </mat-form-field>
             </ng-container>
 <!------------------------------PASSWORD FIELD ------------------------------>
              <ng-container *ngSwitchCase="'password'">
                       <mat-form-field>
                             <input
-                            [formControlName]="field.key" 
-                            [name]="field.name" 
-                            matInput 
-                            equired 
+                            [formControlName]="field.key"
+                            [name]="field.name"
+                            matInput
+                            required
                             placeholder="Entrer votre mot de passe" [type]="hidePassword ? 'password' : 'text'">
                             <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </mat-form-field>
-                        <a href="#">Mot de passe oublié</a>
+                          </mat-form-field>
             </ng-container>
 
 <!------------------------------ TEXT, EMAIL, FIELD ------------------------------>
@@ -31,16 +33,25 @@
              <ng-container *ngSwitchDefault>
                     <mat-form-field>
                         <mat-label *ngIf = "field.label">{{field.label}}</mat-label>
-                            <input [formControlName]="field.key" [type]="field.type" 
+                            <input
+                            [formControlName]="field.key"
+                            [type]="field.type"
                             [name]="field.name" matInput [placeholder]="field.placeholder? field.placeholder: ''">
                     </mat-form-field>
             </ng-container>
         </ng-container>
+        <div class = 'field-error' *ngIf="field.formControl?.invalid && field.formControl.touched">
+          <div *ngIf="field.formControl?.errors?.['required']">le champ "{{ field.name }}" est requis</div>
+          <div *ngIf="field.formControl?.errors?.['email']">E-mail non valide</div>
+          <div *ngIf="field.formControl?.errors?.['minlength']">{{ field.name }} doit contenir au moins {{ field.formControl.errors?.['minlength']['requiredLength'] }} caractères</div>
+        </div>
     </div>
 
 <!------------------------------BUTTONS  ------------------------------>
                 <div class="input-box">
                     <button [disabled]="formTemplate.invalid"  submit type = 'submit' class = 'btn-primary btn-login'>{{submitLabel}}</button>
-                </div>
-    <ng-content select="[social]"></ng-content>
+                  </div>
+
+                  <ng-content select="[social]"></ng-content>
+                  <a href="#">Mot de passe oublié</a>
 </form>
