@@ -1,11 +1,9 @@
 nav{
-    background-color: var(--primary);
+    background-color: var(--primary-light);
     color: var(--light);
 }
 li{
-    background-color: black;
-    margin: 8px;
-    padding: 5px;
+    background-color: var(--primary-dark);
     text-align: center;
     border-radius: 20px;
 }

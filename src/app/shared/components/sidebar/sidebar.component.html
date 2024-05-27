@@ -1,19 +1,19 @@
 <nav
-  class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto  md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-blueBlue-600 text-dark text-left flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
+  class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto  md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-blueBlue-600 text-light text-left flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
 >
   <div
     class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto"
   >
     <!-- Toggler -->
     <button
-      class="cursor-pointer text-dark opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-blueBlue-600 rounded border border-solid border-transparent"
+      class="cursor-pointer text-dark opacity-50 md:hidden px-3 py-1  leading-none bg-blueBlue-600 rounded border border-solid border-transparent"
       type="button"
       (click)="toggleCollapseShow('bg-blueBlue-600 m-2 py-3 px-6')"
     >
       <i class="fas fa-bars"></i>
     </button>
     <!-- Brand -->
-    <a [routerLink]="'/home'" class="md:block text-left md:pb-2 text-dark mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+    <a [routerLink]="'/home'" class="md:block text-left md:pb-2 text-dark mr-0 inline-block whitespace-nowrap uppercase  p-4 px-0"
     >
       <img src="../../../assets/imgs/logo.png" alt="Microfinance digitale">
       <span class="hidden sm:block"> Microfinance digitale </span>
@@ -40,7 +40,7 @@
           <div class="w-6/12">
             <a
               [routerLink]="['/']"
-              class="md:block text-left md:pb-2 text-lightBlue-600-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+              class="md:block text-left md:pb-2 text-lightBlue-600-600 mr-0 inline-block whitespace-nowrap text-sm uppercase  p-4 px-0"
             >
               dieuf dieul
 
@@ -49,7 +49,7 @@
           <div class="w-6/12 flex justify-end">
             <button
               type="button"
-              class="cursor-pointer text-dark opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-blueBlue-600 rounded border border-solid border-transparent"
+              class="cursor-pointer text-dark opacity-50 md:hidden px-3 py-1 leading-none bg-blueBlue-600 rounded border border-solid border-transparent"
               (click)="toggleCollapseShow('hidden')"
             >
               <i class="fas fa-times"></i>
@@ -58,41 +58,33 @@
         </div>
       </div>
       <!-- Form -->
-      <form class="mt-6 mb-4 md:hidden">
-        <div class="mb-3 pt-0">
-          <input
-            type="text"
-            placeholder="Search"
-            class="border-0 px-3 py-2 h-12 border-solid border-lightBlue-600-500 placeholder-lightBlue-600-300 text-lightBlue-600-600 bg-blueBlue-600 rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal"
-          />
-        </div>
-      </form>
+
 
       <!-- Divider -->
       <hr class="my-4 md:min-w-full" />
       <!-- Heading -->
       <h6
-        class="md:min-w-full text-lightBlue-600-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+        class="md:min-w-full uppercase  block pt-1 pb-4 no-underline"
       >
         Client layout page
       </h6>
       <!-- Navigation -->
 
       <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-        <li class="items-center bg-transparent shadow-lg shadow-white-300/50">
+        <li class="items-center bg-transparent shadow-lg shadow-white-300/50 py-2 mb-2">
           <a
             [routerLink]="['/client/dashboard']"
-            class="text-xs uppercase py-3 font-bold block "
+            class=" uppercase py-3  block text-xs "
             routerLinkActive
             #clientDashboard="routerLinkActive"
             [ngClass]="
               clientDashboard.isActive
                 ? 'text-red-600 hover:text-red-700'
-                : 'text-lightBlue-600-700 hover:text-lightBlue-600-500'
+                : 'text-lightBlue-600 hover:text-lightBlue-600'
             "
           >
             <i
-              class=" fas fa-thin fa-circle-user mr-2 text-sm"
+              class=" fas fa-thin fa-circle-user mr-2 "
               [ngClass]="
                 clientDashboard.isActive ? 'opacity-75' : 'text-gray-light'
               "
@@ -101,32 +93,32 @@
           </a>
         </li>
 
-        <li class="items-center">
+        <li class="items-center py-2 mb-2">
           <a
-            [routerLink]="['/client/dashboard']"
-            class="text-xs uppercase py-3 font-bold block"
+            [routerLink]="['/client/loaning']"
+            class=" uppercase py-3 block text-xs"
             routerLinkActive
             #clientDashboard="routerLinkActive"
             [ngClass]="
               clientDashboard.isActive
                 ? 'text-red-600 hover:text-red-700'
-                : 'text-lightBlue-600-700 hover:text-lightBlue-600-500'
+                : 'text-lightBlue-600 hover:text-lightBlue-600'
             "
           >
             <i
-              class="fas fa-regular fa-money-bills mr-2 text-sm"
+              class="fas fa-regular fa-money-bills mr-2 "
               [ngClass]="
-                clientDashboard.isActive ? 'opacity-75' : 'text-lightBlue-600-300'
+                clientDashboard.isActive ? 'opacity-75' : 'text-lightBlue-600'
               "
             ></i>
             Demander un prêt
           </a>
         </li>
 
-        <li class="items-center">
+        <li class="items-center py-2 mb-2">
             <a
             [routerLink]="['/client/settings']"
-            class="text-xs uppercase py-3 font-bold block"
+            class=" uppercase py-3  block text-xs"
             routerLinkActive
             #clientSettings="routerLinkActive"
             [ngClass]="
@@ -136,7 +128,7 @@
             "
           >
             <i
-              class="fas fa-sack-dollar mr-2 text-sm"
+              class="fas fa-sack-dollar mr-2"
               [ngClass]="
                 clientSettings.isActive ? 'opacity-75' : 'text-lightBlue-600-300'
               "
@@ -146,10 +138,10 @@
 
         </li>
 
-        <li class="items-center">
+        <li class="items-center py-2 mb-2">
           <a
             [routerLink]="['/client/tables']"
-            class="text-xs uppercase py-3 font-bold block"
+            class=" uppercase py-3  block text-xs"
             routerLinkActive
             #clientTables="routerLinkActive"
             [ngClass]="
@@ -168,10 +160,10 @@
           </a>
         </li>
 
-        <li class="items-center">
+        <li class="items-center py-2 mb-2">
           <a
-            [routerLink]="['/client/maps']"
-            class="text-xs uppercase py-3 font-bold block"
+            [routerLink]="['/client/messagerie']"
+            class=" uppercase py-3  block text-xs"
             routerLinkActive
             #clientMaps="routerLinkActive"
             [ngClass]="
@@ -189,10 +181,10 @@
             Messagerie
           </a>
         </li>
-        <li class="items-center">
+        <li class="items-center py-2 mb-2">
           <a
-            [routerLink]="['/client/maps']"
-            class="text-xs uppercase py-3 font-bold block"
+            [routerLink]="['/client/tools']"
+            class=" uppercase py-3  block text-xs"
             routerLinkActive
             #clientMaps="routerLinkActive"
             [ngClass]="
