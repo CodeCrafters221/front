@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'client',
     loadChildren: () => import('./pages/client/client.module').then(m => m.ClientModule)
+  },
+  {
+    path: 'agent',
+    loadChildren: () => import('./pages/agent/agent.module').then(m => m.AgentModule)
   }
 
 ];
