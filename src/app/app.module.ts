@@ -5,9 +5,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { UiComponentsModule } from './ui-components/ui-components.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SharedModule } from './shared/shared.module';
+import { AuthService } from './auth.service';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-
-
 
 
 @NgModule({
@@ -20,11 +20,15 @@ import { AppRoutingModule } from './app-routing.module';
     UiComponentsModule,
     AppRoutingModule,
     SharedModule,
+    HttpClientModule,
+  
   ],
   providers: [
+    AuthService,
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } 

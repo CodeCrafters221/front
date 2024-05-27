@@ -1,26 +1,22 @@
 <main>
-
     <!-- HEADER -->
-<app-header></app-header>
+    <app-header></app-header>
 
+    <section>
+      <!-- LOGIN -->
+      <div class="parent">
+        <h2>Connexion</h2>
+        <app-form-template [submitLabel]="'Se connecter'" (submitEvent)="onSubmit($event)" [formTemplate]="loginForm"  [formMaker] = "formMaker">
+          <div social class = "social">
+              <label for="">Ou se connecter avec</label>
+              <button type ="button" class="btn-social">
+                  <img src="../../../assets/icons/google-icon.png" alt="">
+              </button>
+          </div>
+      </app-form-template>
+      </div>
+    </section>
 
-<section>
-<!-- LOGIN  -->
-<div class="parent">
-            <h2>Connexion</h2>
-            <app-form-template [submitLabel]="'Se connecter'" (submitEvent)="onSubmit($event)" [formTemplate]="loginForm"  [formMaker] = "formMaker">
-                <div social class = "social">
-                    <label for="">Ou se connecter avec</label>
-                    <button type ="button" class="btn-social">
-                        <img src="../../../assets/icons/google-icon.png" alt="">
-                    </button>
-                </div>
-            </app-form-template>
-</div>
-</section>
-
-
-<!-- FOOTER -->
-<app-footer></app-footer>
-
-</main>
+    <!-- FOOTER -->
+    <app-footer></app-footer>
+  </main>

@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 
+
 const routes: Routes = [
-  { path: '', 
+  { path: '',
   pathMatch: 'full',
     redirectTo: '/home',
    },
-  { path: 'home', 
-  pathMatch: 'full', 
+  { path: 'home',
+  pathMatch: 'full',
   component: HomeComponent },
   {
     path: 'login',
@@ -16,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'client',
-    loadChildren: () => import('./client/client.module').then(m => m.ClientModule)
+    loadChildren: () => import('./pages/client/client.module').then(m => m.ClientModule)
   }
 
 ];
