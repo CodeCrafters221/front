@@ -21,6 +21,7 @@ import { NotificationDropdownComponent } from './components/dropdown/notificatio
 import { UserDropdownComponent } from './components/dropdown/user-dropdown/user-dropdown.component';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 export const MAT_MODULES = [
   MatFormFieldModule,
@@ -28,7 +29,8 @@ export const MAT_MODULES = [
   MatIconModule,
   MatSelectModule,
   MatCardModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatSnackBarModule
 ]
 
 
