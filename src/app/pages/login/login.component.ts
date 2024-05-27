@@ -16,12 +16,7 @@ export class LoginComponent implements OnInit {
   // -------------------------------------- VARIABLES -------------------------------------------
   loginForm: FormGroup = new FormGroup({});
   submitLabel: string = 'Se connecter';
-<<<<<<< Updated upstream
   formMaker!: FormField[]
-=======
-  errorMessage: string | null = null;
-  hide: boolean = true;
->>>>>>> Stashed changes
 
 
 
@@ -40,23 +35,9 @@ export class LoginComponent implements OnInit {
 
     // FORM MAKER TO BE PASSED TO TEMPLATE
     this.formMaker = [
-<<<<<<< Updated upstream
       {key: 'email', name: 'Email', label: "example@gmail.com", type: 'email',formControl: this.loginForm?.get('email') as FormControl},
       {key: 'password', name: 'Mot de passe', type: 'password', formControl: this.loginForm?.get('password') as FormControl},
     ]
-=======
-      { 
-        key: 'role', name: 'Rôle', type: 'select', label: "Quel est votre rôle", formControl: this.role as FormControl, 
-        options: [
-          { optionName: 'Admin', value: 'ADMIN' },
-          { optionName: 'Agent Microfinance', value: 'AGENT_MICROFINANCE' },
-          { optionName: 'Client', value: 'CLIENT' }
-        ] 
-      },
-      { key: 'email', name: 'Email', label: "example@gmail.com", type: 'email', formControl: this.email as FormControl },
-      { key: 'password', name: 'Mot de passe', type: 'password', formControl: this.password as FormControl }
-    ];
->>>>>>> Stashed changes
   }
 
 
@@ -64,7 +45,6 @@ export class LoginComponent implements OnInit {
   // -------------------------------------- NG ON INIT METHOD -------------------------------------------
   ngOnInit(): void { }
 
-<<<<<<< Updated upstream
 
 
 
@@ -73,13 +53,6 @@ export class LoginComponent implements OnInit {
   // -------------------------------------- ON SUBMIT METHOD -------------------------------------------
   onSubmit(event: any){
     console.log("LOGIN COMPONENT: value of the form ", event);
-=======
-  get role() { return this.loginForm.get('role'); }
-  get email() { return this.loginForm.get('email'); }
-  get password() { return this.loginForm.get('password'); }
-
-  onSubmit(): void {
->>>>>>> Stashed changes
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       this.authService.login(email, password)
@@ -109,7 +82,6 @@ export class LoginComponent implements OnInit {
     } else {
       this.displayError('Veuillez remplir correctement le formulaire.')
     }
-<<<<<<< Updated upstream
 
   }
 
@@ -119,18 +91,5 @@ export class LoginComponent implements OnInit {
     this.snackBar.open(errorMessage, 'OK', {
       duration: 10000,
     })
-=======
   }
 }
-
-export class Login {
-  email: string;
-  password: string;
-
-  constructor() {
-    this.email = '';
-    this.password = '';
->>>>>>> Stashed changes
-  }
-}
-
