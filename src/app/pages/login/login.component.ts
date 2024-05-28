@@ -2,8 +2,8 @@ import { FormField } from './../../ui-components/form-template/form-template.com
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../auth.service';
-import { User, UserRole } from 'app/models/user.interface';
+import { AuthService } from 'app/services/auth/auth.service';
+import { User, UserRole } from 'app/models/user.models';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({

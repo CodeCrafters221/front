@@ -1,4 +1,4 @@
-h2,h3,h4{
+h1,h2,h3,h4{
     color: var(--light);
 }
 
@@ -75,7 +75,7 @@ h2,h3,h4{
     width: 100%;
     min-height: 80vh;
     padding: 0 1rem;
-    
+
     .inner{
         display: flex;
         flex-direction: row;
@@ -118,7 +118,7 @@ h2,h3,h4{
                 }
                 p{ font-size: small;}
             }
-        
+
         }
     }
 }
@@ -160,7 +160,7 @@ h2,h3,h4{
             margin: 1rem;
             padding: 1rem;
             h4{text-transform: uppercase; margin-bottom: 1rem;}
-        
+
             img{
                 object-fit: cover;
                 border-radius: 50%;
