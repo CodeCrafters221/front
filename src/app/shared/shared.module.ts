@@ -16,12 +16,13 @@ import { CardStatsComponent } from './components/cards/card-stats/card-stats.com
 import { CardTableComponent } from './components/cards/card-table/card-table.component';
 import { HeaderStatComponent } from './components/headers/header-stat/header-stat.component';
 import { FooterClientComponent } from './components/footers/footer-client/footer-client.component';
-import { NavbarComponent } from './components/navbar/client-navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/user-navbar/navbar.component';
 import { NotificationDropdownComponent } from './components/dropdown/notification-dropdown/notification-dropdown.component';
 import { UserDropdownComponent } from './components/dropdown/user-dropdown/user-dropdown.component';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 export const MAT_MODULES = [
   MatFormFieldModule,
@@ -30,7 +31,8 @@ export const MAT_MODULES = [
   MatSelectModule,
   MatCardModule,
   MatToolbarModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatProgressBarModule
 ]
 
 

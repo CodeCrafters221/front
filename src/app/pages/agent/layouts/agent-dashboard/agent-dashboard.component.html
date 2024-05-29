@@ -1,0 +1,64 @@
+
+<div class = "w-full flex sm:flex-row flex-col justify-center mt-10">
+  <app-statistics [icon] = "'approved'" title="Prêts approvés" [total]="approvedLoans" class = 'w-1/6 mx-3'></app-statistics>
+  <app-statistics [icon] = "'pending'" title="Demandes en cours" [total]="pendingLoans" class = 'w-1/6 mx-3'></app-statistics>
+  <app-statistics [icon] = "'rejected'" title="Demandes refusées" [total]="rejectedLoans" class = 'w-1/6 mx-3'></app-statistics>
+  <app-statistics [icon]="'progress'" title="Taux d'approbation" [total]="approvalRate"  class = 'w-1/6 mx-3'></app-statistics>
+</div>
+<div class="searchbar w-1/2 mx-auto flex justify-center mt-12">
+  <form action="" class = 'w-full flex'>
+    <input class = 'form-input' type="text" placeholder="Rechercher par nom, email ou identifiant" name="search">
+    <button class = 'ml-4' type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</div>
+<div class = 'w-full list-loan pb-24'>
+  <table class = 'mx-24 mt-12 p-10'>
+    <caption><h4>Liste des demande de prêts</h4></caption>
+    <thead>
+      <tr>
+        <th>Prénoms & Nom</th>
+        <th>identifiant</th>
+        <th>montant</th>
+        <th>Date</th>
+        <th>Statut</th>
+      </tr>
+    </thead>
+    
+    @if (areLoansReadyForTesting) {
+    <tbody *ngIf="allLoans?.length">
+      <tr *ngFor="let loan of allLoans">
+        <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">{{ loan.userId }}</td>
+        <td>{{ loan._id }}</td>
+        <td>{{ loan.amount }}</td>
+        <td>{{ loan.startDate }}</td>
+        <td [ngClass]="loan.status.toLowerCase()">{{ loan.status }}</td>
+      </tr>
+    </tbody>
+    } @else {
+      <tbody>
+        <tr *ngFor="let _ of [].constructor(3)">
+          <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">Mamadou Khoussa</td>
+          <td>34567704</td>
+          <td>450 000</td>
+          <td>25 Jan 2024</td>
+          <td class = 'approved'>APPROUVÉ</td>
+        </tr>
+        <tr *ngFor="let _ of [].constructor(3)">
+          <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">Mahatma Gandhi</td>
+          <td>34567704</td>
+          <td>1 250 000</td>
+          <td>22 Fev 2024</td>
+          <td class ='rejected'>REFUSÉ</td>
+        </tr>
+        <tr *ngFor="let _ of [].constructor(3)">
+          <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">Papa Abdoulaye</td>
+          <td>34567704</td>
+          <td>450 000</td>
+          <td>25 Jan 2024</td>
+          <td class = 'pending'>EN COURS</td>
+        </tr>
+      </tbody>
+    }
+  </table>
+
+</div>

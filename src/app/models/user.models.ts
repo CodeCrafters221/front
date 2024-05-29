@@ -2,6 +2,7 @@
 // INTERFACE FOR GLOBAL USER
 export interface User {
   email: string
+  id: string,
   firstname: string
   lastname: string
   role?: UserRole

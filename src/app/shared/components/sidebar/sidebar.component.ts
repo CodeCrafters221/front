@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MenuItem } from 'app/models/menu.interface';
+import { AuthService } from 'app/services/auth/auth.service';
 
 
 @Component({
@@ -8,10 +10,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   collapseShow = "hidden";
-  constructor() {}
+  @Input() menu: MenuItem[] = [];
+iconClass: string = '';
 
+
+
+  // -------------------------------------- CONSTRUCTOR -------------------------------------------
+  constructor(private authService: AuthService) {
+    console.log("content of menu: ", this.menu)
+    if(!this.menu.length){ // DEFAULT VALUE OF LEFT MENU FOR TESTING PURPOSES
+      this.menu = [
+        {title: 'Mon Compte', url: '/client/dashboard', icon: 'fa-circle-user'},
+        {title: 'Demander un prêt', url: '/client/apply-loan', icon: 'fa-hand-holding-dollar'},
+        {title: 'Suivi de mes prêts', url: '/client/view-loan', icon: 'fa-sack-dollar'},
+        {title: 'Rembourser un prêt', url: '/client/pay-loan', icon: 'fa-money-bills'},
+        {title: 'Messagerie', url: '/client/messaging', icon: 'fa-envelope'},
+        {title: 'Paramètre', url: '/client/settings', icon: 'fa-tools'},
+      ]
+    }
+  }
+
+  // -------------------------------------- NG ON INIT -------------------------------------------
   ngOnInit() {}
+
+
+
+
+  // -------------------------------------- TOGGLE COLLAPSE -------------------------------------------
   toggleCollapseShow(classes: string) {
     this.collapseShow = classes;
   }
+
+
+
+
+
+  // -------------------------------------- LOGOUT METHOD -------------------------------------------
+  logout(){
+    console.log("logging out")
+    this.authService.logout();
+  }
 }
+

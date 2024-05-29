@@ -6,7 +6,7 @@ button{
 // YELLO BUTTON WITH SHADOW
 .btn-secondary{
     background-color: var(--secondary);
-    color: white;
+    color: var(--primary);
     border-radius: 15px;
     border: none;
     padding: 0.5rem 2rem;
@@ -22,7 +22,7 @@ button{
         background-color: var(--secondary);
         }
     }
-    
+
 }
 
 
@@ -63,7 +63,7 @@ button{
         background-color: transparent;
         }
     }
-    
+
 }
 
 

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { environment } from 'environments/environment.debug';
-import { User } from './models/user.interface';
+import { User } from 'app/models/user.models';
 
 const API = environment.apiUrl // URL OF API  (TO BE UPDATED WHEN DEPLOYING)
 

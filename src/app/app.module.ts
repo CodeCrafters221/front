@@ -5,9 +5,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { UiComponentsModule } from './ui-components/ui-components.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SharedModule } from './shared/shared.module';
-import { AuthService } from './auth.service';
+import { AuthService } from './services/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { AgentModule } from './pages/agent/agent.module';
+import { LoanService } from './services/loan/loan.service';
 
 
 @NgModule({
@@ -21,14 +23,15 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-  
+    AgentModule,
   ],
   providers: [
     AuthService,
+    LoanService,
     provideClientHydration(),
     provideAnimationsAsync(),
 
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { } 
+export class AppModule { }

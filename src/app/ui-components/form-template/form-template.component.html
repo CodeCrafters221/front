@@ -19,6 +19,7 @@
              <ng-container *ngSwitchCase="'password'">
                       <mat-form-field>
                             <input
+                            class="form-input"
                             [formControlName]="field.key"
                             [name]="field.name"
                             matInput
@@ -34,6 +35,7 @@
                     <mat-form-field>
                         <mat-label *ngIf = "field.label">{{field.label}}</mat-label>
                             <input
+                            class="form-input"
                             [formControlName]="field.key"
                             [type]="field.type"
                             [name]="field.name" matInput [placeholder]="field.placeholder? field.placeholder: ''">
@@ -53,5 +55,5 @@
                   </div>
 
                   <ng-content select="[social]"></ng-content>
-                  <a href="#">Mot de passe oublié</a>
+                  <a class = 'redirect' href="#">Mot de passe oublié</a>
 </form>

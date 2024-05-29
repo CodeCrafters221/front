@@ -13,11 +13,18 @@ const routes: Routes = [
   component: HomeComponent },
   {
     path: 'login',
+    pathMatch: 'full',
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
   },
   {
     path: 'client',
+    pathMatch: 'full',
     loadChildren: () => import('./pages/client/client.module').then(m => m.ClientModule)
+  },
+  {
+    path: 'agent',
+    pathMatch: 'full',
+    loadChildren: () => import('./pages/agent/agent.module').then(m => m.AgentModule)
   }
 
 ];

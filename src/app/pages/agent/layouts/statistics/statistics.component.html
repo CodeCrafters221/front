@@ -1,0 +1,19 @@
+<div class = 'stats'>
+  <div class = 'stats-header'>
+    <p class = 'stats-title'>{{ title }}</p>
+    <select *ngIf="icon!== 'progress'" name="period" id="period-id">
+      <option value="volvo">30 jours</option>
+      <option value="saab">6 mois</option>
+      <option value="mercedes">cette année</option>
+    </select>
+  </div>
+  <div class="stats-footer">
+    <h2 class = 'total' color = 'primary'>{{ total }}</h2>
+    @if (icon !== 'progress') {
+      <img  src="../../../../../assets/icons/{{ icon }}.png" alt="">
+    } @else {
+      <mat-progress-bar mode="determinate" [value]="+total.toString().replace('%', '')"></mat-progress-bar>
+    }
+  </div>
+
+</div>

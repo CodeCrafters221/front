@@ -1,9 +1,39 @@
 nav{
-    background-color: var(--primary-light);
+    background: var(--radial);
     color: var(--light);
+    #home {
+        .logo{
+        width: 57px;
+        height: auto;
+        margin: auto;
+      }
+      span{text-align: center;}
+  }
+  .logout{
+    position: absolute;
+    bottom: 2rem;
+    width: 80%;
+    align-self: center;
+    z-index: 111;
+    font-size: small;
+  }
 }
 li{
+  text-align: center;
+  border-radius: 7px;
+  a{
     background-color: var(--primary-dark);
-    text-align: center;
-    border-radius: 20px;
+      text-align: left;
+      border-radius: 7px;
+      &.is-active{
+          background-color: var(--primary-lighter);
+          margin-right: 0;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+      }
+      &:hover{
+          background-color: var(--primary);
+      }
+      i{font-size: large;}
+  }
 }

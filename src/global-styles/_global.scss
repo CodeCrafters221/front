@@ -1,12 +1,18 @@
 
-// MAIN SECTION
-.main, main{
+// MAIN SECTION RADIAL BLUE
+.main-primary{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: var(--radial);
     width: 100%;
+}
+
+// MAIN SECTION WHITE
+.main-light{
+  @extend .main-primary;
+  background: var(--light);
 }
 
 
@@ -18,13 +24,13 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    
+
 
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
 
-        
+
         // LISTE DES LIENS DU MENU
         ul{
             display: flex;
