@@ -9,6 +9,7 @@ import { AuthService } from './services/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AgentModule } from './pages/agent/agent.module';
+import { LoanService } from './services/loan/loan.service';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AgentModule } from './pages/agent/agent.module';
   ],
   providers: [
     AuthService,
+    LoanService,
     provideClientHydration(),
     provideAnimationsAsync(),
 

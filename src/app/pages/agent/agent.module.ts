@@ -5,6 +5,7 @@ import { AgentDashboardComponent } from './layouts/agent-dashboard/agent-dashboa
 import { RouterModule, Routes } from '@angular/router';
 import { AgentComponent } from './agent.component';
 import { StatisticsComponent } from './layouts/statistics/statistics.component';
+import { agentResolver } from './resolvers/agent.resolver';
 
 
 const AgentRoutes: Routes = [
@@ -20,7 +21,10 @@ const AgentRoutes: Routes = [
       },
       {
         path: 'dashboard',
-        component: AgentDashboardComponent
+        component: AgentDashboardComponent,
+        resolve: {
+          loans: agentResolver
+        },
       },
     ]
   }
