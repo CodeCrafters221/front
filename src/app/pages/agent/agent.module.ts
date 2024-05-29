@@ -8,9 +8,21 @@ import { StatisticsComponent } from './layouts/statistics/statistics.component';
 
 
 const AgentRoutes: Routes = [
+
   {
-    path: '',
-    component: AgentComponent
+    path: 'agent',
+    component: AgentComponent,
+    children: [
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'dashboard',
+      },
+      {
+        path: 'dashboard',
+        component: AgentDashboardComponent
+      },
+    ]
   }
 ]
 

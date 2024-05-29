@@ -1,17 +1,17 @@
 <nav
-  class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto  md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl text-light text-left flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
+  class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto  md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl text-light text-left flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4">
   <div
     class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
     <!-- Toggler -->
-    <button
-      class="cursor-pointer text-dark opacity-50 md:hidden px-3 py-1  leading-none bg-blueBlue-600 rounded border border-solid border-transparent"
-      type="button" (click)="toggleCollapseShow('bg-blueBlue-600 m-2 py-3 px-6')">
+    <button class="cursor-pointer text-dark opacity-50 md:hidden px-3 py-1  leading-none bg-blueBlue-600 rounded border border-solid border-transparent"
+            type="button"
+            (click)="toggleCollapseShow('bg-blueBlue-600 m-2 py-3 px-6')">
       <i class="fas fa-bars"></i>
     </button>
     <!-- Brand -->
-    <a [routerLink]="'/home'"
-      class="md:block text-left md:pb-2 text-dark mr-0 inline-block whitespace-nowrap uppercase  p-4 px-0">
-      <img src="../../../assets/imgs/logo.png" alt="Microfinance digitale">
+    <a id = 'home' [routerLink]="'/home'"
+      class="md:block text-left md:pb-2 text-dark mr-0 inline-block whitespace-nowrap uppercase px-0">
+      <img class = 'logo' src="../../../assets/imgs/logo.png" alt="Microfinance digitale">
       <span class="hidden sm:block"> Microfinance digitale </span>
     </a>
     <!-- User -->
@@ -46,24 +46,15 @@
           </div>
         </div>
       </div>
-      <!-- Form -->
-
-
-      <!-- Divider -->
-      <hr class="my-4 md:min-w-full" />
-      <!-- Heading -->
-      <h6 class="md:min-w-full uppercase  block pt-1 pb-4 no-underline">
-        Client layout page
-      </h6>
       <!-- Navigation -->
-      <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+      <ul class="md:flex-col md:min-w-full flex flex-col list-none mt-1">
         @for (item of menu; track item.url) {
-          <li class="items-center bg-transparent shadow-lg shadow-white-300/50 py-2 mb-2">
-            <a [routerLink]="[item.url]" class="uppercase py-3 block text-xs "
+          <li class="items-center bg-transparent shadow-white-300/50 mb-8"  >
+            <a [routerLink]="[item.url]" class="uppercase py-2 px-4 block text-xs mx-6 shadow-lg"
                 routerLinkActive
-                #menuItem="routerLinkActive"
-                [ngClass]="menuItem.isActive? 'bg-green': ''">
-            <i [class]="item.icon" ></i>
+                [ngClass]="menuItem.isActive? 'is-active': ''"
+                #menuItem="routerLinkActive">
+            <i [class]="'fas fa-thin ' + item.icon + ' mr-4'"></i>
             {{ item.title }}
           </a>
         </li>
@@ -72,5 +63,9 @@
       </ul>
 
     </div>
+
+    <button (click) = "logout()" class = "logout btn-secondary">
+       SE DÉCONNECTER <i class="fa-solid fa-arrow-right-from-bracket ml-4"></i>
+    </button>
   </div>
 </nav>
