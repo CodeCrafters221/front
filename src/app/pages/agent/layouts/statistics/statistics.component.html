@@ -12,7 +12,7 @@
     @if (icon !== 'progress') {
       <img  src="../../../../../assets/icons/{{ icon }}.png" alt="">
     } @else {
-      <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+      <mat-progress-bar mode="determinate" [value]="+total.toString().replace('%', '')"></mat-progress-bar>
     }
   </div>
 

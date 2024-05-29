@@ -23,28 +23,42 @@
         <th>Statut</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let _ of [].constructor(3)">
-        <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">Mamadou Khoussa</td>
-        <td>34567704</td>
-        <td>450 000</td>
-        <td>25 Jan 2024</td>
-        <td class = 'approved'>APPROUVÉ</td>
-      </tr>
-      <tr *ngFor="let _ of [].constructor(3)">
-        <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">Mahatma Gandhi</td>
-        <td>34567704</td>
-        <td>1 250 000</td>
-        <td>22 Fev 2024</td>
-        <td class ='rejected'>REFUSÉ</td>
-      </tr>
-      <tr *ngFor="let _ of [].constructor(3)">
-        <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">Papa Abdoulaye</td>
-        <td>34567704</td>
-        <td>450 000</td>
-        <td>25 Jan 2024</td>
-        <td class = 'pending'>EN COURS</td>
+    
+    @if (areLoansReadyForTesting) {
+    <tbody *ngIf="allLoans?.length">
+      <tr *ngFor="let loan of allLoans">
+        <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">{{ loan.userId }}</td>
+        <td>{{ loan._id }}</td>
+        <td>{{ loan.amount }}</td>
+        <td>{{ loan.startDate }}</td>
+        <td [ngClass]="loan.status.toLowerCase()">{{ loan.status }}</td>
       </tr>
     </tbody>
+    } @else {
+      <tbody>
+        <tr *ngFor="let _ of [].constructor(3)">
+          <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">Mamadou Khoussa</td>
+          <td>34567704</td>
+          <td>450 000</td>
+          <td>25 Jan 2024</td>
+          <td class = 'approved'>APPROUVÉ</td>
+        </tr>
+        <tr *ngFor="let _ of [].constructor(3)">
+          <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">Mahatma Gandhi</td>
+          <td>34567704</td>
+          <td>1 250 000</td>
+          <td>22 Fev 2024</td>
+          <td class ='rejected'>REFUSÉ</td>
+        </tr>
+        <tr *ngFor="let _ of [].constructor(3)">
+          <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">Papa Abdoulaye</td>
+          <td>34567704</td>
+          <td>450 000</td>
+          <td>25 Jan 2024</td>
+          <td class = 'pending'>EN COURS</td>
+        </tr>
+      </tbody>
+    }
   </table>
+
 </div>

@@ -21,6 +21,7 @@ export class AgentDashboardComponent implements OnInit {
   rejectedLoans: number|string =0
   pendingLoans:  number|string =0
   approvalRate: number|string =0
+areLoansReadyForTesting: boolean = false; // FOR TESTING PURPOSES
 
   constructor (private activatedRoute: ActivatedRoute) { }
 

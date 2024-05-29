@@ -62,6 +62,7 @@ table{
       justify-content: center;
       align-items: center;
       min-width: 7rem;
+      text-overflow: ellipsis;
       &:first-of-type{
         min-width: 11rem;
       }
