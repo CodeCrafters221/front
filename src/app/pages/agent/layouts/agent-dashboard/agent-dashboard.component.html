@@ -1,0 +1,42 @@
+<div class = "w-full flex flex-row justify-center mt-10">
+  <app-statistics [icon] = "'approved'" title="Prêts approvés" [total]="10" class = 'w-1/6 mx-3'></app-statistics>
+  <app-statistics [icon] = "'pending'" title="Demandes en cours" [total]="10" class = 'w-1/6 mx-3'></app-statistics>
+  <app-statistics [icon] = "'rejected'" title="Demandes refusées" [total]="10" class = 'w-1/6 mx-3'></app-statistics>
+  <app-statistics [icon]="'progress'" title="Taux d'approbation" [total]="'75%'"  class = 'w-1/6 mx-3'></app-statistics>
+</div>
+<div class = 'w-full list-loan pb-24'>
+  <table class = 'mx-24 mt-24 p-10'>
+    <thead>
+      <tr>
+        <th>Prénoms & Nom</th>
+        <th>identifiant</th>
+        <th>montant</th>
+        <th>Date</th>
+        <th>Statut</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let _ of [].constructor(3)">
+        <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">Mamadou Khoussa</td>
+        <td>34567704</td>
+        <td>450 000</td>
+        <td>25 Jan 2024</td>
+        <td class = 'approved'>APPROUVÉ</td>
+      </tr>
+      <tr *ngFor="let _ of [].constructor(3)">
+        <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">Mahatma Gandhi</td>
+        <td>34567704</td>
+        <td>1 250 000</td>
+        <td>22 Fev 2024</td>
+        <td class ='rejected'>REFUSÉ</td>
+      </tr>
+      <tr *ngFor="let _ of [].constructor(3)">
+        <td><img src="../../../../../assets/imgs/pp2.jpeg" alt="">Papa Abdoulaye</td>
+        <td>34567704</td>
+        <td>450 000</td>
+        <td>25 Jan 2024</td>
+        <td class = 'pending'>EN COURS</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,50 @@
+
+.stats{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: solid .1px var(--light-grey);
+  border-radius: 15px;
+  padding: 1rem;
+  height: fit-content;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: var(--light);
+  .stats-header, .stats-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    img{
+      width: 66px;
+      height: 66px;
+    }
+    mat-progress-bar{
+      color: var(--success);
+      height: 2rem;
+      border-radius: 15px;
+    }
+    .stats-title{
+      font-size: .8rem;
+      width: 50%;
+      font-weight: bold;
+      color: var(--primary-light);
+  }
+  select{
+    border: solid .5px var(--light-grey);
+    border-radius: 5px;
+    padding: 0 4px;
+    font-size: .8rem;
+  }
+
+
+}
+ .stats-footer{
+    justify-content: center;
+    .total{
+      color: var(--primary-light);
+      margin-right: 1rem;
+    }
+  }
+}
