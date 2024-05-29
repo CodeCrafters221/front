@@ -1,6 +1,24 @@
 .list-loan{
   background: var(--lighter);
 }
+
+div.searchbar{
+      form input.form-input{
+        border: solid 1px var(--light-grey) !important;
+        border-radius: 50px;
+        height: 2rem;
+        padding: 0 1rem;
+      }
+
+      form button{
+        height: 2rem;
+        color: var(--primary-light);
+        margin-left: -2rem;
+      }
+
+}
+
+
 table{
   display: flex;
   flex-direction: column;
@@ -8,6 +26,11 @@ table{
   background-color: var(--light);
   border-radius: 15px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  caption{
+    color: var(--primary-light);
+    text-transform: uppercase;
+    font-weight: bold
+  };
   thead, tbody{
     width: 100%;
     th{
@@ -54,6 +77,11 @@ table{
         &.pending{@include styleStatus(#F7A400);}
       }
     }
+  }
+  tbody tr:hover{
+    transform: scale(1.02);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
   }
 }
 
