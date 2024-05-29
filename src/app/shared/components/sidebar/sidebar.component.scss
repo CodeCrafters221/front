@@ -31,6 +31,9 @@ li{
           border-top-right-radius: 0;
           border-bottom-right-radius: 0;
       }
+      &:hover{
+          background-color: var(--primary);
+      }
       i{font-size: large;}
   }
 }
