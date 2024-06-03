@@ -16,6 +16,7 @@ import { LoanService } from './services/loan/loan.service';
   declarations: [
     AppComponent,
     HomeComponent,
+  
   ],
   imports: [
     BrowserModule,

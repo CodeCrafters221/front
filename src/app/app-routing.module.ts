@@ -18,14 +18,13 @@ const routes: Routes = [
   },
   {
     path: 'client',
-    pathMatch: 'full',
     loadChildren: () => import('./pages/client/client.module').then(m => m.ClientModule)
   },
   {
     path: 'agent',
     pathMatch: 'full',
     loadChildren: () => import('./pages/agent/agent.module').then(m => m.AgentModule)
-  }
+  },
 
 ];
 
