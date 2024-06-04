@@ -1,0 +1,48 @@
+.loan-request-form {
+  max-width: 800px;  // Augmentez la largeur maximale du formulaire
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;  // Définir le fond en blanc
+  border-radius: 0; // Pas de bordure arrondie
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .form-label {
+      width: 200px;
+      color: blue;
+      margin-right: 10px;
+    }
+
+    input,
+    select,
+    textarea {
+      flex: 1;
+      border: 1px solid #ccc;
+      padding: 8px;
+      border-radius: 0; // Pas de bordure arrondie
+    }
+
+    input[type="file"] {
+      flex: none;
+    }
+  }
+
+  button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+}
