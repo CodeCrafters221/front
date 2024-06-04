@@ -1,85 +1,82 @@
 <h2 style="text-align: center;">Formulaire de Demande de Prêt</h2>
 <div [formGroup]="loanRequestForm" class="loan-request-form">
   <form (ngSubmit)="onSubmit()">
-        <div>
-            <label for="firstName">Nom</label>
-            <input id="firstName" formControlName="firstName" type="text" placeholder="Entrez votre nom">
-          </div>
-          <div>
-            <label for="lastName">Prénom</label>
-            <input id="lastName" formControlName="lastName" type="text" placeholder="Entrez votre prénom">
-          </div>
-          <div>
-            <label for="age">Âge</label>
-            <input id="age" formControlName="age" type="number" placeholder="Entrez votre âge">
-          </div>
-          <div>
-            <label for="gender">Genre</label>
-            <select id="gender" formControlName="gender">
-              <option value="">Sélectionnez votre genre</option>
-              <option value="Feminin">Feminin</option>
-              <option value="Masculin">Masculin</option> 
-            </select>
-            
-          </div>
-          <div>
-            <label for="contact">Contact</label>
-            <input id="contact" formControlName="contact" type="number" placeholder="Entrez votre contact">
-          </div>
-          <div>
-            <label for="cni">Numéro d'Identification National </label>
-            <input id="cni" formControlName="cni" type="number" placeholder="Entrez votre numéro de CNI">
-          </div>
-          
-      <div>
-        <label for="projectTitle">Titre du Projet pour lequel vous demandez un Prêt *</label>
-        <input id="projectTitle" formControlName="projectTitle" type="text" placeholder="(ex: Logement, Projet immobilier, Acquisition de voiture, Acquisition de Matériel, Autres)">
-      </div>
-      <div>
-        <label for="amount">Montant du Prêt *</label>
-        <input id="amount" formControlName="amount" type="number" placeholder="0000 FCFA">
-      </div>
-      <div>
-        <label for="professionalCategory">Catégorie Professionnelle *</label>
-        <select id="professionalCategory" formControlName="professionalCategory">
-          <option value="">Sélectionnez votre categorie professionnelle</option>
-          <option value="employé">Employé</option>
-          <option value="entrepreneur">Entrepreneur</option>
-          <option value="au chômage">Au chômage</option>
-          <option value="travailleur informel">Travailleur Informel</option>
-        </select>
-      </div>
-      <div>
-        <label for="profession">Profession *</label>
-        <input id="profession" formControlName="profession" type="text" placeholder="Commerçant, Directeur Générale, Professeur, Étudiant">
-      </div>
-      <div>
-        <label for="companyName">Nom de l’Entreprise</label>
-        <input id="companyName" formControlName="companyName" type="text" placeholder="Veuillez fournir le nom de votre business ou le nom de l’entreprise ou vous travaillez">
-      </div>
-      <div>
-        <label for="startDate">Date de Début du Travail *</label>
-        <input id="startDate" formControlName="startDate" type="date">
-      </div>
-      <div>
-        <label for="paymentType">Type de Paiement *</label>
-        <select id="paymentType" formControlName="paymentType">
-          <option value="">Sélectionnez le Type de Paiement qui vous convient</option>
-          <option value="Wave">Wave</option>
-          <option value="Orange Money">OrangeMoney</option>
-          <option value="Free Money">Free Money</option>
-        </select>
-      </div>
-      <div>
-        <label for="documents">Documents & Justificatifs *</label>
-        <input id="documents" formControlName="documents" type="file">
-        <textarea id="justificatifs" formControlName="justificatifs" rows="4" placeholder="Veuillez fournir les explications pour justifier votre demande de prêts. Veuillez également fournir en quelques mots les raisons de votre demande de prêts"></textarea>
-      </div>
-      <div>
-        <label for="confirmInfo">Veuillez confirmer la validité de vos informations actuelles avant de valider *</label>
-        <input id="confirmInfo" formControlName="confirmInfo" type="checkbox">
-      </div>
-      <button type="submit" [disabled]="loanRequestForm.invalid">Soumettre</button>
-    </form>
-  </div>
-  
+    <div class="form-group">
+      <label for="firstName" class="form-label">Nom</label>
+      <input id="firstName" formControlName="firstName" type="text" placeholder="Entrez votre nom">
+    </div>
+    <div class="form-group">
+      <label for="lastName" class="form-label">Prénom</label>
+      <input id="lastName" formControlName="lastName" type="text" placeholder="Entrez votre prénom">
+    </div>
+    <div class="form-group">
+      <label for="age" class="form-label">Âge</label>
+      <input id="age" formControlName="age" type="number" placeholder="Entrez votre âge">
+    </div>
+    <div class="form-group">
+      <label for="gender" class="form-label">Genre</label>
+      <select id="gender" formControlName="gender">
+        <option value="">Sélectionnez votre genre</option>
+        <option value="Feminin">Feminin</option>
+        <option value="Masculin">Masculin</option> 
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="contact" class="form-label">Contact</label>
+      <input id="contact" formControlName="contact" type="number" placeholder="Entrez votre contact">
+    </div>
+    <div class="form-group">
+      <label for="cni" class="form-label">Numéro d'Identification National</label>
+      <input id="cni" formControlName="cni" type="number" placeholder="Entrez votre numéro de CNI">
+    </div>
+    <div class="form-group">
+      <label for="projectTitle" class="form-label">Titre du Projet pour lequel vous demandez un Prêt *</label>
+      <input id="projectTitle" formControlName="projectTitle" type="text" placeholder="(ex: Logement, Projet immobilier, Acquisition de voiture, Acquisition de Matériel, Autres)">
+    </div>
+    <div class="form-group">
+      <label for="amount" class="form-label">Montant du Prêt *</label>
+      <input id="amount" formControlName="amount" type="number" placeholder="0000 FCFA">
+    </div>
+    <div class="form-group">
+      <label for="professionalCategory" class="form-label">Catégorie Professionnelle *</label>
+      <select id="professionalCategory" formControlName="professionalCategory">
+        <option value="">Sélectionnez votre categorie professionnelle</option>
+        <option value="employé">Employé</option>
+        <option value="entrepreneur">Entrepreneur</option>
+        <option value="au chômage">Au chômage</option>
+        <option value="travailleur informel">Travailleur Informel</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="profession" class="form-label">Profession *</label>
+      <input id="profession" formControlName="profession" type="text" placeholder="Commerçant, Directeur Générale, Professeur, Étudiant">
+    </div>
+    <div class="form-group">
+      <label for="companyName" class="form-label">Nom de l’Entreprise</label>
+      <input id="companyName" formControlName="companyName" type="text" placeholder="Veuillez fournir le nom de votre business ou le nom de l’entreprise ou vous travaillez">
+    </div>
+    <div class="form-group">
+      <label for="startDate" class="form-label">Date de Début du Travail *</label>
+      <input id="startDate" formControlName="startDate" type="date">
+    </div>
+    <div class="form-group">
+      <label for="paymentType" class="form-label">Type de Paiement *</label>
+      <select id="paymentType" formControlName="paymentType">
+        <option value="">Sélectionnez le Type de Paiement qui vous convient</option>
+        <option value="Wave">Wave</option>
+        <option value="Orange Money">OrangeMoney</option>
+        <option value="Free Money">Free Money</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="documents" class="form-label">Documents & Justificatifs *</label>
+      <input id="documents" formControlName="documents" type="file">
+      <textarea id="justificatifs" formControlName="justificatifs" rows="4" placeholder="Veuillez fournir les explications pour justifier votre demande de prêts. Veuillez également fournir en quelques mots les raisons de votre demande de prêts"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="confirmInfo" class="form-label">Veuillez confirmer la validité de vos informations actuelles avant de valider *</label>
+      <input id="confirmInfo" formControlName="confirmInfo" type="checkbox">
+    </div>
+    <button type="submit" [disabled]="loanRequestForm.invalid">Soumettre</button>
+  </form>
+</div>
