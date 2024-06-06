@@ -29,6 +29,7 @@
 				"build": {
 					"builder": "@angular-devkit/build-angular:application",
 					"options": {
+						"allowedCommonJsDependencies": [ "chart.js" ],
 						"outputPath": "dist/codecraft_frontend",
 						"index": "src/index.html",
 						"browser": "src/main.ts",

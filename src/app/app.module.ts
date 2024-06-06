@@ -25,6 +25,7 @@ import { LoanService } from './services/loan/loan.service';
     SharedModule,
     HttpClientModule,
     AgentModule,
+  
   ],
   providers: [
     AuthService,
