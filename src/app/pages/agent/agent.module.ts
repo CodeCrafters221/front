@@ -11,7 +11,7 @@ import { agentResolver } from './resolvers/agent.resolver';
 const AgentRoutes: Routes = [
 
   {
-    path: 'agent',
+    path: '',
     component: AgentComponent,
     children: [
     {
