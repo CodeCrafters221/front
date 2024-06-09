@@ -10,13 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AgentModule } from './pages/agent/agent.module';
 import { LoanService } from './services/loan/loan.service';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AdminModule } from './pages/admin/admin.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-  
+
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { LoanService } from './services/loan/loan.service';
     SharedModule,
     HttpClientModule,
     AgentModule,
-  
+    AdminModule
+
   ],
   providers: [
     AuthService,

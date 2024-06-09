@@ -30,7 +30,7 @@ areLoansReadyForTesting: boolean = false; // FOR TESTING PURPOSES
     this.activatedRoute.data.subscribe((loansData) => {
       console.log('AGENT DASHBORD: all loans from resolvers',loansData);
       this.allLoans = loansData['loans'] as ILoan[]
-      if(!this.allLoans.length){
+      if(!this.allLoans?.length){
         this.approvedLoans = 0
         this.rejectedLoans = 0
         this.pendingLoans = 0

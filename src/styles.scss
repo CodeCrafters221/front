@@ -104,6 +104,7 @@ $custom-secondary-map: (
 
 $codecraft_frontend-primary: mat.define-palette($custom-primary-map);
 $codecraft_frontend-accent: mat.define-palette($custom-secondary-map);
+$codecraft_frontend-purp: mat.define-palette(mat.$green-palette);
 $codecraft_frontend-warn: mat.define-palette(mat.$red-palette); // The warn palette is optional (defaults to red).
 
 // Create the theme object. A theme consists of configurations for individual
@@ -113,6 +114,7 @@ $codecraft_frontend-theme: mat.define-light-theme((
     primary: $codecraft_frontend-primary,
     accent: $codecraft_frontend-accent,
     warn: $codecraft_frontend-warn,
+    purp: $codecraft_frontend-purp,
   ),
   typography: mat.define-typography-config(),
   density: 0
@@ -159,6 +161,7 @@ $codecraft_frontend-theme: mat.define-light-theme((
     --light-grey: lightgrey;
 
 
+
     --success: #22C55E;
     --success-light: #4AD991;
     --alert: #FF4545;
@@ -195,6 +198,9 @@ body { margin: 0;
 }
 .mat-mdc-form-field-bottom-align::before {
   display: contents;
+}
+.mat-mdc-form-field-flex , .mat-mdc-form-field-infix, .mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-text-field__input  {
+  height: 100%;
 }
 
 app-form-template{

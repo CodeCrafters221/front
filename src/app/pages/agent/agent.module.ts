@@ -8,10 +8,10 @@ import { StatisticsComponent } from './layouts/statistics/statistics.component';
 import { agentResolver } from './resolvers/agent.resolver';
 
 
-const AgentRoutes: Routes = [
+const agentRoutes: Routes = [
 
   {
-    path: 'agent',
+    path: '',
     component: AgentComponent,
     children: [
     {
@@ -39,7 +39,7 @@ const AgentRoutes: Routes = [
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(AgentRoutes),
+    RouterModule.forChild(agentRoutes),
   ],
   exports: [
     AgentComponent,

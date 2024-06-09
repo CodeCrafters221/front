@@ -42,7 +42,7 @@ export class LoanService {
 
 
 
-  // 
+  //
   // -------------------------------------- GET LOAN BY ID -------------------------------------------
   getLoanById(id: string): Promise<ILoan> {
     console.log('GET LOAN BY ID')
