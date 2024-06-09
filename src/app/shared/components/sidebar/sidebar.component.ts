@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MenuItem } from 'app/models/menu.interface';
 import { AuthService } from 'app/services/auth/auth.service';
 
@@ -11,6 +11,7 @@ import { AuthService } from 'app/services/auth/auth.service';
 export class SidebarComponent implements OnInit {
   collapseShow = "hidden";
   @Input() menu: MenuItem[] = [];
+  @Output() onUpdateNavbar = new EventEmitter<string>();
 iconClass: string = '';
 
 
@@ -42,6 +43,13 @@ iconClass: string = '';
   }
 
 
+
+
+  // -------------------------------------- UPDATE NAV -------------------------------------------
+  updateNavbar(menuTite: string){
+    console.log('SIDEBAR COMPONENT: update navbar',menuTite)
+    this.onUpdateNavbar.emit(menuTite)
+  }
 
 
 

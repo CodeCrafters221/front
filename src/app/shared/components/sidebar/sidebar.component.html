@@ -52,6 +52,7 @@
           <li class="items-center bg-transparent shadow-white-300/50 mb-8"  >
             <a [routerLink]="[item.url]" class="uppercase py-2 px-4 block text-xs mx-6 shadow-lg"
                 routerLinkActive
+                (click) = "updateNavbar(item.title)"
                 [ngClass]="menuItem.isActive? 'is-active': ''"
                 #menuItem="routerLinkActive">
             <i [class]="'fas fa-thin ' + item.icon + ' mr-4'"></i>

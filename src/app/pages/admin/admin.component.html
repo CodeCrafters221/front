@@ -1,6 +1,6 @@
 <main class = 'main-light'>
-  <app-sidebar [menu]="sideMenu"></app-sidebar>
-  <app-user-navbar></app-user-navbar>
+  <app-sidebar (onUpdateNavbar)="navBarTitle = $event" [menu]="sideMenu"></app-sidebar>
+  <app-user-navbar [title]="navBarTitle" ></app-user-navbar>
 <section>
   <router-outlet></router-outlet>
 </section>
