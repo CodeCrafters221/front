@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AiConfigs } from 'app/models/aiconfigs.models';
 import { environment } from 'environments/environment.debug';
 import { firstValueFrom } from 'rxjs/internal/firstValueFrom';
 
@@ -23,5 +24,19 @@ export class AiAssistantService {
       'Authorization': 'Bearer ' + token
     })
     return  firstValueFrom(this.http.get(`${AI_ASSISTANT_API}/configs`, {headers: headersOptions}))
+  }
+
+
+
+
+  // -------------------------------------- UPDATE CONFIGS-------------------------------------------
+  updateAiAssistantConfigs(configs: AiConfigs) {
+    console.log('UPDATE AI ASSISTANT CONFIGS')
+    const token = localStorage.getItem('access_token')
+    const headersOptions = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    })
+    return  firstValueFrom(this.http.put(`${AI_ASSISTANT_API}/configs`, configs, {headers: headersOptions}))
   }
 }

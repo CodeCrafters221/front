@@ -6,7 +6,7 @@
   <!-- NOM ET DESCRIPTION DE L'ASSISTANT -->
   <div class="section">
     <h3>NOM & DESCRIPTION DE L'ASSISTANT</h3>
-    <button class="btn-secondary" (click) = "isEditing.assistantName = !isEditing.assistantName">
+    <button class="btn-secondary" (click) = "isEditing.assistantName = !isEditing.assistantName; onSave(isEditing.assistantName)">
       <i class="fas fa-pen-to-square" *ngIf = "!isEditing.assistantName"></i>
       <i class="fas fa-circle-check" *ngIf = "isEditing.assistantName"></i>
     </button>
@@ -17,19 +17,15 @@
           <mat-label>Nom de l'assistant</mat-label>
               <input
               class="form-input"
-              [(ngModel)] = "aiConfigs.assistantName"
+              [(ngModel)] = "aiConfigs.ASSISTANT_NAME"
               type="text"
               name="assistantName" matInput>
       </mat-form-field>
       } @else {
         <div class="assistant-name">
-        {{ aiConfigs.assistantName }}
+        {{ aiConfigs.ASSISTANT_NAME }}
       </div>
       }
-
-      <button class="edit-button">
-        <img src="../../../../../assets/imgs/logo.png" alt="Edit Icon">
-      </button>
     </div>
   </div>
 
@@ -40,45 +36,45 @@
     <div class="generation-config flex flex-row flex-wrap gap-2">
       <div class="config-item">
         <h4>Temperature</h4>
-        <div class="config-value">{{ +aiConfigs.generationConfig.temperature*100 }}%</div>
+        <div class="config-value">{{ +aiConfigs.GENERATION_CONFIG.temperature*100 }}%</div>
         <div class="config-icon bg-blue-400">
           <i class="fas fa-thin fa-temperature-three-quarters"></i>
         </div>
       <!-- <mat-progress-bar mode="determinate" [value]=aiConfigs.temperature></mat-progress-bar> -->
       <mat-slider min="0" max="1" step=".01" showTickMarks discrete>
-        <input [(ngModel)] = "aiConfigs.generationConfig.temperature" value = "{{aiConfigs.generationConfig.temperature}}" matSliderThumb>
+        <input (blur) = "onSliderChange($event)" [(ngModel)] = "aiConfigs.GENERATION_CONFIG.temperature" value = "{{aiConfigs.GENERATION_CONFIG.temperature}}" matSliderThumb>
       </mat-slider>
 
       </div>
       <div class="config-item">
         <h4>Top_p</h4>
-        <div class="config-value">{{ +aiConfigs.generationConfig.topP * 100 }}%</div>
+        <div class="config-value">{{ +aiConfigs.GENERATION_CONFIG.topP * 100 }}%</div>
         <div class="config-icon bg-purple-400">
           <i class="fas fa-thin fa-percent"></i>
         </div>
-      <mat-slider min="0" max="100" step="1" showTickMarks discrete >
-        <input [(ngModel)] = "aiConfigs.generationConfig.topP" value = "{{+aiConfigs.generationConfig.topP}}" matSliderThumb>
+      <mat-slider  min="0" max="1" step=".01" showTickMarks discrete >
+        <input (blur) = "onSliderChange($event)" [(ngModel)] = "aiConfigs.GENERATION_CONFIG.topP" value = "{{+aiConfigs.GENERATION_CONFIG.topP}}" matSliderThumb>
       </mat-slider>
 
       </div>
       <div class="config-item">
         <h4>Top_k</h4>
-        <div class="config-value">{{ aiConfigs.generationConfig.topK }}</div>
+        <div class="config-value">{{ aiConfigs.GENERATION_CONFIG.topK }}</div>
         <div class="config-icon bg-green-500">
           <i class="fas fa-thin fa-robot"></i>
         </div>
       <mat-slider min="0" max="100" step="1" showTickMarks discrete >
-        <input [(ngModel)] = "aiConfigs.generationConfig.topK" value = "{{aiConfigs.generationConfig.topK}}" matSliderThumb>
+        <input (blur) = "onSliderChange($event)" [(ngModel)] = "aiConfigs.GENERATION_CONFIG.topK" value = "{{aiConfigs.GENERATION_CONFIG.topK}}" matSliderThumb>
       </mat-slider>
     </div>
       <div class="config-item">
         <h4>Max Tokens Générés</h4>
-        <div class="config-value">{{ aiConfigs.generationConfig.maxOutputTokens }}</div>
+        <div class="config-value">{{ aiConfigs.GENERATION_CONFIG.maxOutputTokens }}</div>
         <div class="config-icon bg-yellow-500">
           <i class="fas fa-thin fa-coins"></i>
         </div>
       <mat-slider min="0" max="10000" step="10" showTickMarks discrete >
-        <input [(ngModel)] = "aiConfigs.generationConfig.maxOutputTokens" value = "{{aiConfigs.generationConfig.maxOutputTokens}}" matSliderThumb>
+        <input (blur) = "onSliderChange($event)" [(ngModel)] = "aiConfigs.GENERATION_CONFIG.maxOutputTokens" value = "{{aiConfigs.GENERATION_CONFIG.maxOutputTokens}}" matSliderThumb>
       </mat-slider>
     </div>
     </div>
@@ -88,7 +84,7 @@
    <!-- TON OPTIONNEL & INSTRUCTIONS DE L'ASSISTANT -->
    <div class="section right-section w-1/2">
     <h3>TON OPTIONNEL & INSTRUCTIONS DE L'ASSISTANT</h3>
-    <button class="btn-secondary" (click)="isEditing.systemInstructions = !isEditing.systemInstructions">
+    <button class="btn-secondary" (click)="isEditing.systemInstructions = !isEditing.systemInstructions; onSave(isEditing.systemInstructions)">
       <i class="fas fa-pen-to-square" *ngIf="!isEditing.systemInstructions"></i>
       <i class="fas fa-circle-check" *ngIf="isEditing.systemInstructions"></i>
     </button>
@@ -96,12 +92,12 @@
       <mat-form-field class = "w-full h-full">
         <mat-label>Instructions de l'assistant ia</mat-label>
             <textarea
-            [(ngModel)] = "aiConfigs.systemInstructions"
+            [(ngModel)] = "aiConfigs.SYSTEM_INSTRUCTIONS"
             type="text"
             name="systemInstructions" matInput></textarea>
     </mat-form-field>
     } @else {
-      <p>{{ aiConfigs.systemInstructions }}</p>
+      <p>{{ aiConfigs.SYSTEM_INSTRUCTIONS }}</p>
     }
   </div>
   </div>
@@ -113,7 +109,7 @@
   <!-- CONFIGURATION DE MODÈLE -->
   <div class="section">
     <h3>CONFIGURATION DE MODÈLE</h3>
-    <button class="btn-secondary"  (click) = "isEditing.model = !isEditing.model" style = "right: -97%">
+    <button class="btn-secondary"  (click) = "isEditing.model = !isEditing.model; onSave(isEditing.model)" style = "right: -97%">
       <i class="fas fa-pen-to-square" *ngIf="!isEditing.model"></i>
       <i class="fas fa-circle-check" *ngIf="isEditing.model"></i>
     </button>
@@ -121,13 +117,13 @@
       <img src="../../../../../assets/icons/gemini-brain.svg" alt="Model Icon" class="model-icon">
       @if (!isEditing.model) {
       <div class="flex flex-col">
-        <div class="model-name">{{ aiConfigs.modelName }}</div>
-        <div class="model-id">{{ aiConfigs.model }}</div>
+        <div class="model-name">{{ aiConfigs.GEMINI_NAME }}</div>
+        <div class="model-id">{{ aiConfigs.MODEL_NAME }}</div>
       </div>
     } @else {
       <mat-form-field class = "w-full h-full -mt-14 ml-16">
         <mat-label>Model LLM</mat-label>
-        <mat-select (ngModelChange)="onModelChange($event)"  [(ngModel)] = "aiConfigs.model">
+        <mat-select (ngModelChange)="onModelChange($event)"  [(ngModel)] = "aiConfigs.MODEL_NAME">
           <mat-option *ngFor="let option of models" [value]="option.value">{{option.name}}</mat-option>
       </mat-select>
     </mat-form-field>
