@@ -22,9 +22,9 @@ const agentRoutes: Routes = [
       {
         path: 'dashboard',
         component: AgentDashboardComponent,
-        // resolve: {
-        //   loans: agentResolver
-        // },
+        resolve: {
+          loans: agentResolver
+        },
       },
     ]
   }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { SharedModule } from 'app/shared/shared.module';
 import { UiComponentsModule } from 'app/ui-components/ui-components.module';
@@ -31,6 +31,7 @@ const adminRoutes: Routes = [
     RouterModule.forChild(adminRoutes),
     UiComponentsModule,
     ReactiveFormsModule,
+    FormsModule,
     SharedModule,
     CommonModule
   ],

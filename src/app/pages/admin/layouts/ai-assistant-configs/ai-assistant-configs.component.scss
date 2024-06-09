@@ -1,6 +1,4 @@
-:root{
-  background: var(--lighter);
-}
+
 .assistant-configuration {
   .section {
     margin-bottom: 57px;
@@ -12,6 +10,10 @@
     &.gen-configs{
       background-color: transparent;
       box-shadow: none;
+    }
+
+    &.right-section{
+      padding-bottom: 3rem;
     }
 
     h3 {
@@ -39,7 +41,7 @@
       .assistant-img {
         width: 250px;
         height: 250px;
-        // margin-right: 10px;
+        margin-bottom: 19px;
         object-fit: cover;
         border: solid .1px var(--light-grey);
         border-radius: 50%;
@@ -106,10 +108,10 @@
           align-items: center;
           i{color: var(--light)}
         }
-        mat-progress-bar{
+        mat-progress-bar, mat-slider{
           transform: rotate(-90deg);
-          margin-top: -50%;
-          right: -50%;
+          margin-top: -80%;
+          right: -44%;
           width: 90%;
         }
       }

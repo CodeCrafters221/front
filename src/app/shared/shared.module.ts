@@ -23,6 +23,8 @@ import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatSliderModule} from '@angular/material/slider';
+
 
 export const MAT_MODULES = [
   MatFormFieldModule,
@@ -32,7 +34,8 @@ export const MAT_MODULES = [
   MatCardModule,
   MatToolbarModule,
   MatSnackBarModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatSliderModule
 ]
 
 

@@ -199,6 +199,9 @@ body { margin: 0;
 .mat-mdc-form-field-bottom-align::before {
   display: contents;
 }
+.mat-mdc-form-field-flex , .mat-mdc-form-field-infix, .mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-text-field__input  {
+  height: 100%;
+}
 
 app-form-template{
   width: 100%;
