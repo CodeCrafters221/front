@@ -8,7 +8,7 @@ import { StatisticsComponent } from './layouts/statistics/statistics.component';
 import { agentResolver } from './resolvers/agent.resolver';
 
 
-const AgentRoutes: Routes = [
+const agentRoutes: Routes = [
 
   {
     path: '',
@@ -22,9 +22,9 @@ const AgentRoutes: Routes = [
       {
         path: 'dashboard',
         component: AgentDashboardComponent,
-        resolve: {
-          loans: agentResolver
-        },
+        // resolve: {
+        //   loans: agentResolver
+        // },
       },
     ]
   }
@@ -39,7 +39,7 @@ const AgentRoutes: Routes = [
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(AgentRoutes),
+    RouterModule.forChild(agentRoutes),
   ],
   exports: [
     AgentComponent,

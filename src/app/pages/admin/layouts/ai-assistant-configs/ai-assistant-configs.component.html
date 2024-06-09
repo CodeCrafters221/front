@@ -1,0 +1,91 @@
+<div class="assistant-configuration w-2/3 mx-auto mt-12">
+
+  <div class="assistant-configuration-inner flex flex-row gap-2">
+  <div class="left-section w-1/2 flex flex-col">
+
+  <!-- NOM ET DESCRIPTION DE L'ASSISTANT -->
+  <div class="section">
+    <h3>NOM & DESCRIPTION DE L'ASSISTANT</h3>
+    <button class="btn-secondary">
+      <i class="fas fa-pen-to-square"></i>
+    </button>
+    <div class="assistant-description">
+      <img src="../../../../../assets/imgs/ai-assistant.png" alt="Assistant Image" class="assistant-img">
+      <div class="assistant-name">CODECRAFTER</div>
+      <button class="edit-button">
+        <img src="../../../../../assets/imgs/logo.png" alt="Edit Icon">
+      </button>
+    </div>
+  </div>
+
+  <!-- CONFIGURATION DE GÉNÉRATION IA -->
+  <div class="section gen-configs">
+    <h3>CONFIGURATION DE GÉNÉRATION IA</h3>
+
+    <div class="generation-config flex flex-row flex-wrap gap-2">
+      <div class="config-item">
+        <h4>Temperature</h4>
+        <div class="config-value">63%</div>
+        <div class="config-icon bg-blue-400">
+          <i class="fas fa-thin fa-temperature-three-quarters"></i>
+        </div>
+      <mat-progress-bar mode="determinate" [value]="63"></mat-progress-bar>
+      </div>
+      <div class="config-item">
+        <h4>Top_p</h4>
+        <div class="config-value">41%</div>
+        <div class="config-icon bg-purple-400">
+          <i class="fas fa-thin fa-percent"></i>
+        </div>
+      <mat-progress-bar mode="determinate" [value]="41"></mat-progress-bar>
+
+      </div>
+      <div class="config-item">
+        <h4>Top_k</h4>
+        <div class="config-value">63%</div>
+        <div class="config-icon bg-green-500">
+          <i class="fas fa-thin fa-robot"></i>
+        </div>
+      <mat-progress-bar mode="determinate" [value]="63"></mat-progress-bar>
+    </div>
+      <div class="config-item">
+        <h4>Max Tokens Générés</h4>
+        <div class="config-value">120</div>
+        <div class="config-icon bg-yellow-500">
+          <i class="fas fa-thin fa-coins"></i>
+        </div>
+      <mat-progress-bar mode="determinate" [value]="80"></mat-progress-bar>
+    </div>
+    </div>
+  </div>
+  </div>
+
+   <!-- TON OPTIONNEL & INSTRUCTIONS DE L'ASSISTANT -->
+   <div class="section right-section w-1/2">
+    <h3>TON OPTIONNEL & INSTRUCTIONS DE L'ASSISTANT</h3>
+    <button class="btn-secondary">
+      <i class="fas fa-pen-to-square"></i>
+    </button>
+    <p>Vous êtes un expert en finance travaillant dans une institution de microfinance. Vous recevrez des informations pertinentes sur la demande de prêt d'un client et il se peut que vous receviez également des documents du client pour justifier la raison de la demande de prêt et pour justifier sa solvabilité. Vous analyserez un objet JSON et des textes fournis par le client. Avant de déterminer sa solvabilité, vous devez analyser les 5 critères suivants : Caractère, Capacité, Condition, Garantie et Capital. Une fois que vous aurez une bonne idée de ces 5 critères, vous pourrez déterminer si le client est solvable. Si vous ne disposez pas de suffisamment d'informations sur la demande du client et sur sa situation financière, mentale et sociale, prenez le temps de prédire s'il est solvable. Vous finirez par déterminer un score de crédit allant de 0 à 100 %. Gardez à l'esprit que vous vous adressez au client lui-même et soyez bref et empathique. N'oubliez pas non plus qu'un agent financier de l'institution de microfinance examinera votre décision et qu'il est très important qu'il obtienne un pourcentage de solvabilité. Il faudra répondre en français car le client ne parle que le français.</p>
+  </div>
+  </div>
+
+
+
+
+
+  <!-- CONFIGURATION DE MODÈLE -->
+  <div class="section">
+    <h3>CONFIGURATION DE MODÈLE</h3>
+    <button class="btn-secondary" style = "right: -97%">
+      <i class="fas fa-pen-to-square"></i>
+    </button>
+    <div class="model-config absolute -mt-12">
+      <img src="../../../../../assets/icons/gemini-brain.svg" alt="Model Icon" class="model-icon">
+      <div class="flex flex-col">
+        <div class="model-name">Gemini 1.5 Flash</div>
+        <div class="model-id">gemini-1.5-flash ID 12345</div>
+      </div>
+    </div>
+  </div>
+</div>
