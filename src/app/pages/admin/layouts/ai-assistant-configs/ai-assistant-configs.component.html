@@ -40,45 +40,45 @@
     <div class="generation-config flex flex-row flex-wrap gap-2">
       <div class="config-item">
         <h4>Temperature</h4>
-        <div class="config-value">{{ aiConfigs.temperature }}%</div>
+        <div class="config-value">{{ +aiConfigs.generationConfig.temperature*100 }}%</div>
         <div class="config-icon bg-blue-400">
           <i class="fas fa-thin fa-temperature-three-quarters"></i>
         </div>
       <!-- <mat-progress-bar mode="determinate" [value]=aiConfigs.temperature></mat-progress-bar> -->
-      <mat-slider min="0" max="100" step="1" showTickMarks discrete>
-        <input [(ngModel)] = "aiConfigs.temperature" value = "{{aiConfigs.temperature}}" matSliderThumb>
+      <mat-slider min="0" max="1" step=".01" showTickMarks discrete>
+        <input [(ngModel)] = "aiConfigs.generationConfig.temperature" value = "{{aiConfigs.generationConfig.temperature}}" matSliderThumb>
       </mat-slider>
 
       </div>
       <div class="config-item">
         <h4>Top_p</h4>
-        <div class="config-value">{{ aiConfigs.topP }}%</div>
+        <div class="config-value">{{ +aiConfigs.generationConfig.topP * 100 }}%</div>
         <div class="config-icon bg-purple-400">
           <i class="fas fa-thin fa-percent"></i>
         </div>
       <mat-slider min="0" max="100" step="1" showTickMarks discrete >
-        <input [(ngModel)] = "aiConfigs.topP" value = "{{aiConfigs.topP}}" matSliderThumb>
+        <input [(ngModel)] = "aiConfigs.generationConfig.topP" value = "{{+aiConfigs.generationConfig.topP}}" matSliderThumb>
       </mat-slider>
 
       </div>
       <div class="config-item">
         <h4>Top_k</h4>
-        <div class="config-value">{{ aiConfigs.topK }}</div>
+        <div class="config-value">{{ aiConfigs.generationConfig.topK }}</div>
         <div class="config-icon bg-green-500">
           <i class="fas fa-thin fa-robot"></i>
         </div>
-      <mat-slider min="0" max="1000" step="1" showTickMarks discrete >
-        <input [(ngModel)] = "aiConfigs.topK" value = "{{aiConfigs.topK}}" matSliderThumb>
+      <mat-slider min="0" max="100" step="1" showTickMarks discrete >
+        <input [(ngModel)] = "aiConfigs.generationConfig.topK" value = "{{aiConfigs.generationConfig.topK}}" matSliderThumb>
       </mat-slider>
     </div>
       <div class="config-item">
         <h4>Max Tokens Générés</h4>
-        <div class="config-value">{{ aiConfigs.maxTokens }}</div>
+        <div class="config-value">{{ aiConfigs.generationConfig.maxOutputTokens }}</div>
         <div class="config-icon bg-yellow-500">
           <i class="fas fa-thin fa-coins"></i>
         </div>
       <mat-slider min="0" max="10000" step="10" showTickMarks discrete >
-        <input [(ngModel)] = "aiConfigs.maxTokens" value = "{{aiConfigs.maxTokens}}" matSliderThumb>
+        <input [(ngModel)] = "aiConfigs.generationConfig.maxOutputTokens" value = "{{aiConfigs.generationConfig.maxOutputTokens}}" matSliderThumb>
       </mat-slider>
     </div>
     </div>
