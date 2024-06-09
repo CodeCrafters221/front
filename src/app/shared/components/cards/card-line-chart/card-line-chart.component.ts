@@ -29,8 +29,8 @@ export class CardLineChartComponent  implements OnInit {
           {
             label: "retrait/depot",
             fill: false,
-            backgroundColor: "#fff",
-            borderColor: "#fff",
+            backgroundColor: "#06b6d4",
+            borderColor: "#06b6d4",
             data: [1560, 2310, 1700.20, 2500, 998, 100],
           },
         ],
@@ -41,11 +41,11 @@ export class CardLineChartComponent  implements OnInit {
         title: {
           display: false,
           text: "Sales Charts",
-          fontColor: "white",
+          fontColor: "#06b6d4",
         },
         legend: {
           labels: {
-            fontColor: "white",
+            fontColor: "#06b6d4",
           },
           align: "end",
           position: "bottom",
@@ -61,19 +61,19 @@ export class CardLineChartComponent  implements OnInit {
         scales: {
           x: {
             ticks: {
-              color: "rgba(255,255,255,.7)",
+              color: "#06b6d4",
             },
             display: true,
             title: {
               display: false,
               text: "Month",
-              color: "white",
+              color: "#06b6d4",
             },
             grid: {
               display: false,
               borderDash: [2],
               borderDashOffset: [2],
-              color: "rgba(33, 37, 41, 0.3)",
+              color: "#06b6d4",
               zeroLineColor: "rgba(0, 0, 0, 0)",
               zeroLineBorderDash: [2],
               zeroLineBorderDashOffset: [2],
@@ -81,13 +81,13 @@ export class CardLineChartComponent  implements OnInit {
           },
           y: {
             ticks: {
-              color: "rgba(255,255,255,.7)",
+              color: "#06b6d4",
             },
             display: true,
             title: {
               display: false,
               text: "Value",
-              color: "white",
+              color: "#06b6d4",
             },
             grid: {
               borderDash: [3],
