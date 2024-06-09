@@ -1,5 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 import { AiConfigs } from 'app/models/aiconfigs.interface';
+import { AiAssistantService } from 'app/services/ai-assistant/ai-assistant.service';
 
 @Component({
   selector: 'app-ai-assistant-configs',
@@ -53,9 +55,17 @@ models: any[] =[
 
 
 
+// ------------------------------------------ CONSTRUCTOR -------------------------------------------
+    constructor(private aiAssistantService: AiAssistantService) {
+
+     }
+
+
+
 // ------------------------------------------ ON INIT ------------------------------------------
-ngOnInit(){
-  console.log("AI ASSISTANT COMPONENT: ----> NGONINIT ")
+  async ngOnInit(){
+  const configs = await this.aiAssistantService.getAiAssistantConfigs()
+  console.log("AI ASSISTANT COMPONENT: ----> NGONINIT ", configs)
 }
 
 

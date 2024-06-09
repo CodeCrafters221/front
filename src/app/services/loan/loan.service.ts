@@ -29,10 +29,10 @@ export class LoanService {
   // -------------------------------------- GET ALL LOANS -------------------------------------------
   getAllLoans(): Promise<ILoan[]> {
     console.log('GET ALL LOANS')
-    // const token = localStorage.getItem('access_token')
+    const token = localStorage.getItem('access_token')
     const headersOptions = new HttpHeaders({
       'Content-Type': 'application/json',
-      // 'Authorization': 'Bearer ' + token
+      'Authorization': 'Bearer ' + token
     })
     return  firstValueFrom(this.http.get<ILoan[]>(`${API}/loans`, {headers: headersOptions}))
   }
