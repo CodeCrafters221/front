@@ -1,7 +1,4 @@
-<main class = 'main-light flex flex-col md:flex-row '>
-    <app-sidebar (onUpdateNavbar)="navBarTitle = $event" [menu]="sideMenu"></app-sidebar>
-    <app-user-navbar [title]="navBarTitle" class = 'relative md:ml-64'></app-user-navbar>
-  <section class = "relative md:ml-64">
-    <router-outlet></router-outlet>
-  </section>
-</main>
+
+<app-main [navBarTitle]="navBarTitle" [sideMenu]="sideMenu">
+  <router-outlet router-outlet></router-outlet>
+</app-main>

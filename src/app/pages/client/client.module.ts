@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'app/shared/shared.module';
 import { ClientComponent } from './client.component';
 import { LoanRequestComponent } from './layouts/loan-request/loan-request.component';
+import { AiInterviewComponent } from './layouts/ai-interview/ai-interview.component';
 
 
 const Clientroutes: Routes = [
@@ -18,12 +19,13 @@ const Clientroutes: Routes = [
       { path: "dashboard", component: DashboardComponent },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
       { path: "apply-loan", component: LoanRequestComponent },
+      { path: "ai-interview", component: AiInterviewComponent },
     ],
   },
 ]
 
 @NgModule({
-  declarations: [DashboardComponent, ClientComponent, LoanRequestComponent],
+  declarations: [DashboardComponent, ClientComponent, LoanRequestComponent, AiInterviewComponent],
   imports: [
     RouterModule.forChild(Clientroutes),
     UiComponentsModule,
@@ -31,6 +33,6 @@ const Clientroutes: Routes = [
     SharedModule,
     CommonModule
   ],
-  exports: [DashboardComponent, ClientComponent, LoanRequestComponent]
+  exports: [DashboardComponent, ClientComponent, LoanRequestComponent, AiInterviewComponent]
 })
 export class ClientModule { }

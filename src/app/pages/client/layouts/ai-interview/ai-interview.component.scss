@@ -1,0 +1,67 @@
+
+.max-w-lg {
+  max-width: 834px;
+}
+
+.message {
+  &.assistant {
+    .flex {
+      align-items: start;
+
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 9999px;
+      }
+
+      div {
+        background-color: #e5e7eb;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+
+        p {
+          color: #4b5563;
+          font-size: 0.875rem;
+        }
+
+        span {
+          font-size: 0.75rem;
+          color: #9ca3af;
+        }
+      }
+    }
+  }
+
+  &.client {
+    justify-content: flex-end;
+
+    .flex {
+      align-items: start;
+      justify-content: flex-end;
+
+      div {
+        background-color: #2563eb;
+        color: #ffffff;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+
+        p {
+          color: #ffffff;
+          font-size: 0.875rem;
+        }
+
+        span {
+          font-size: 0.75rem;
+          color: #d1d5db;
+        }
+      }
+    }
+  }
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+}
