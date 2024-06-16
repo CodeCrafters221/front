@@ -1,10 +1,10 @@
 
 <main class = 'flex flex-col justify-center items-center'>
   <div class="chat fixed w-full md:w-[44%] top-32 bg-white shadow-lg rounded-lg h-[80vh] mb-[4vh] grid">
-    <div class="p-4 h-fit fixed w-[inherit] bg-white z-10">
+    <div class="messages-header p-4 h-fit fixed w-[inherit] bg-white z-10">
       <h1 class="text-lg font-semibold">INTERVIEW AVEC L'ASSISTANT IA</h1>
     </div>
-    <div class="px-4 py-2 space-y-4 absolute top-16">
+    <div class="px-4 py-2 space-y-4 absolute top-20">
       <div class="message assistant">
         <div class="flex">
           <img src="../../../../../assets/imgs/ai-assistant.png" alt="Assistant" class="w-10 h-10 rounded-full">
@@ -33,8 +33,20 @@
         </div>
       </div>
     </div>
-    <div class="fixed p-4 self-end bg-white w-[inherit] rounded-lg">
-      <input type="text" placeholder="Écrire votre message" class="w-full p-2 border border-gray-300 rounded-lg">
+    <div class="send-message fixed flex gap-2 p-4 self-end bg-white w-[inherit] rounded-lg">
+      <button>
+        <i class="fa-solid fa-microphone"></i>
+      </button>
+      <textarea placeholder="Écrire votre message" class="p-2 border border-gray-300 rounded-lg"></textarea>
+      <button>
+        <i class="fa-solid fa-paperclip"></i>
+      </button>
+      <button>
+        <i class="fa-solid fa-file-image"></i>
+      </button>
+      <button class="btn-primary  text-white font-bold rounded flex justify-center items-center">
+        <i class="fa-solid fa-paper-plane mr-2"></i>Envoyer
+      </button>
     </div>
   </div>
 </main>

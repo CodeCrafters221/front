@@ -1,6 +1,9 @@
 
 .chat {
   overflow: scroll;
+  .messages-header{
+    border-bottom: solid .1px var(--light-grey);
+  }
 }
 
 .message {
@@ -63,9 +66,20 @@
   }
 }
 
-input[type="text"] {
+.send-message{
+  border-top: solid .1px var(--light-grey);
+  align-items: center;
+  .btn-primary{
+    padding: 0 1rem;
+    font-size: x-small;
+    min-height: 1rem;
+    height: 2rem;
+  }
+}
+
+textarea {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--light-grey);
   border-radius: 0.5rem;
 }
