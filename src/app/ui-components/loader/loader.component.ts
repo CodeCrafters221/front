@@ -7,6 +7,7 @@ import { LoaderService } from 'app/services/loader/loader.service';
   styleUrl: './loader.component.scss'
 })
 export class LoaderComponent {
+wannaStopLoading: boolean = false;
   constructor(protected readonly loader: LoaderService){
     console.log('APP COMPONENT CONSTRUCTOR: ')
   }
