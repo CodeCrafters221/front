@@ -15,18 +15,28 @@
         object-fit: cover;
       }
   &.assistant {
+
     .flex {
       align-items: start;
-
       div {
         background-color: #e5e7eb;
         padding: 0.5rem;
         border-radius: 0.5rem;
         width: 80%;
+        transition: all;
+        animation: fadeIn 5.5s forwards;
+
+  @keyframes fadeIn {
+        0% {opacity: 0}
+        100% {opacity: 1;}
+      }
 
         p {
           color: #4b5563;
-          font-size: 0.875rem;
+      
+          p{
+            margin: .5rem 0 !important;
+          }
         }
 
         span {
@@ -35,6 +45,9 @@
         }
       }
     }
+
+
+
   }
 
   &.client {
@@ -54,7 +67,6 @@
 
         p {
           color: #ffffff;
-          font-size: 0.875rem;
         }
 
         span {

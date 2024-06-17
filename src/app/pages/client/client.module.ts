@@ -8,6 +8,7 @@ import { SharedModule } from 'app/shared/shared.module';
 import { ClientComponent } from './client.component';
 import { LoanRequestComponent } from './layouts/loan-request/loan-request.component';
 import { AiInterviewComponent } from './layouts/ai-interview/ai-interview.component';
+import { LoanService } from 'app/services/loan/loan.service';
 
 
 const Clientroutes: Routes = [
@@ -25,13 +26,20 @@ const Clientroutes: Routes = [
 ]
 
 @NgModule({
-  declarations: [DashboardComponent, ClientComponent, LoanRequestComponent, AiInterviewComponent],
+  declarations: [
+    DashboardComponent,
+    ClientComponent,
+    LoanRequestComponent,
+    AiInterviewComponent],
   imports: [
     RouterModule.forChild(Clientroutes),
     UiComponentsModule,
     ReactiveFormsModule,
     SharedModule,
     CommonModule
+  ],
+  providers: [
+    LoanService,
   ],
   exports: [DashboardComponent, ClientComponent, LoanRequestComponent, AiInterviewComponent]
 })

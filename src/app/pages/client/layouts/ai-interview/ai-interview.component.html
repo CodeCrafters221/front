@@ -1,23 +1,23 @@
 
 <main class = 'flex flex-col justify-center items-center'>
-  <div class="chat fixed w-full md:w-[44%] top-32 bg-white shadow-lg rounded-lg h-[80vh] mb-[4vh] grid">
+  <div class="chat fixed w-full md:w-[60%] top-32 bg-white shadow-lg rounded-lg h-[80vh] mb-[4vh] grid">
     <div class="messages-header p-4 h-fit fixed w-[inherit] bg-white z-10">
       <h1 class="text-lg font-semibold">INTERVIEW AVEC L'ASSISTANT IA</h1>
     </div>
-    <div class="px-4 py-2 space-y-4 absolute top-20">
+    <div class="px-4 pt-2 pb-56 space-y-4 absolute top-20">
       <div class="message assistant">
         <div class="flex">
           <img src="../../../../../assets/imgs/ai-assistant.png" alt="Assistant" class="w-10 h-10 rounded-full">
           <div class="ml-2 bg-gray-200 p-2 rounded-lg">
-            <p class="text-sm text-gray-700">J’ai bien reçu votre demande de prêt de 50 000 000 XOF pour financer vos études. Je comprends que vous êtes actuellement étudiant et que vous n'avez pas de revenus réguliers. Pour pouvoir vous aider au mieux, j’ai besoin de mieux comprendre votre situation.</p>
-            <span class="text-xs text-gray-500">6:30 pm</span>
+            <p class="text-gray-700" [innerHTML]="aiFirstResponse | markdown"></p>
+            <span class="text-xs text-gray-500">{{ responseTimestamp }}</span>
           </div>
         </div>
       </div>
-      <div class="message client">
+      <!-- <div class="message client">
         <div class="flex justify-end">
           <div class="mr-2 bg-blue-600 text-white p-2 rounded-lg">
-            <p class="text-sm">J’ai un petit boulot qui me permet d'avoir environ 2000000 XOF par mois. En plus de ça, j'ai des parents riches qui me donnent 300 000 XOF par mois en guise d'argent de poche.</p>
+            <p>J’ai un petit boulot qui me permet d'avoir environ 2000000 XOF par mois. En plus de ça, j'ai des parents riches qui me donnent 300 000 XOF par mois en guise d'argent de poche.</p>
             <span class="text-xs text-gray-200">6:34 pm</span>
           </div>
           <img src="../../../../../assets/imgs/pp2.jpeg" alt="Assistant" class="w-10 h-10 rounded-full">
@@ -27,11 +27,11 @@
         <div class="flex">
           <img src="../../../../../assets/imgs/ai-assistant.png" alt="Assistant" class="w-10 h-10 rounded-full">
           <div class="ml-2 bg-gray-200 p-2 rounded-lg">
-            <p class="text-sm text-gray-700">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default. Contrary to popular belief, Lorem Ipsum is not simply random text; it is the model text for your company.</p>
+            <p class="text-gray-700">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default. Contrary to popular belief, Lorem Ipsum is not simply random text; it is the model text for your company.</p>
             <span class="text-xs text-gray-500">6:38 pm</span>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="send-message fixed flex gap-2 p-4 self-end bg-white w-[inherit] rounded-lg">
       <button>

@@ -17,7 +17,7 @@ export class AiAssistantService {
 
   // -------------------------------------- GET CONFIGS-------------------------------------------
   getAiAssistantConfigs() {
-    console.log('GET ALL LOANS')
+    console.log('GET AI CONFIGS --> ')
     const token = localStorage.getItem('access_token')
     const headersOptions = new HttpHeaders({
       'Content-Type': 'application/json',
