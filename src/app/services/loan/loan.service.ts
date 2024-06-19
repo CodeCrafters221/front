@@ -52,4 +52,15 @@ export class LoanService {
     })
     return  firstValueFrom(this.http.get<ILoan>(`${API}/loans/${id}`, {headers: headersOptions}))
   }
+
+
+  // -------------------------------------- INSERT LOAN -------------------------------------------
+  insertLoan(loan: ILoan) {
+    console.log('INSERT LOAN')
+    const headersOptions = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+    })
+    return  firstValueFrom(this.http.post(`${API}/loans`, loan, {headers: headersOptions}))
+  }
 }

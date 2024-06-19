@@ -1,10 +1,3 @@
-<div>
-    <app-sidebar [menu]="sideMenu" (onUpdateNavbar)="navBarTitle = $event"></app-sidebar>
-    <div class="relative md:ml-64 bg-zinc-50">
-      <app-user-navbar [title]="navBarTitle"></app-user-navbar>
-      <div class="relative px-4 md:px-10 mx-auto w-full top-24">
-        <router-outlet></router-outlet>
-        <app-footer-client></app-footer-client>
-      </div>
-    </div>
-  </div>
+  <app-main [navBarTitle]="navBarTitle" [sideMenu]="sideMenu">
+    <router-outlet router-outlet></router-outlet>
+  </app-main>

@@ -6,13 +6,12 @@ import { UiComponentsModule } from './ui-components/ui-components.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SharedModule } from './shared/shared.module';
 import { AuthService } from './services/auth/auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AgentModule } from './pages/agent/agent.module';
 import { LoanService } from './services/loan/loan.service';
-import { AdminComponent } from './pages/admin/admin.component';
 import { AdminModule } from './pages/admin/admin.module';
-
+import { LoadingInterceptor } from './interceptors/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,6 +34,9 @@ import { AdminModule } from './pages/admin/admin.module';
     LoanService,
     provideClientHydration(),
     provideAnimationsAsync(),
+    {
+      provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
+    }
 
   ],
   bootstrap: [AppComponent]

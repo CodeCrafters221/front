@@ -1,10 +1,8 @@
 .loan-request-form {
-  max-width: 800px;  // Augmentez la largeur maximale du formulaire
-  margin: 0 auto;
+  max-width: 900px;  // Augmentez la largeur maximale du formulaire
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #fff;  // Définir le fond en blanc
-  border-radius: 0; // Pas de bordure arrondie
 
   .form-group {
     display: flex;
@@ -13,7 +11,7 @@
 
     .form-label {
       width: 200px;
-      color: blue;
+      color: var(--primary-light);
       margin-right: 10px;
     }
 
@@ -23,7 +21,7 @@
       flex: 1;
       border: 1px solid #ccc;
       padding: 8px;
-      border-radius: 0; // Pas de bordure arrondie
+      border-radius: 7px; // toute l'appli est a des bordures arrondies mounaan pas de bordure
     }
 
     input[type="file"] {
@@ -46,3 +44,5 @@
     }
   }
 }
+
+

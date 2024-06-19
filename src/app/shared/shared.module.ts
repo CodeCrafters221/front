@@ -24,6 +24,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSliderModule} from '@angular/material/slider';
+import { MainComponent } from './components/main/main.component';
+import { MarkdownPipe } from 'app/pipes/markdown.pipe';
 
 
 export const MAT_MODULES = [
@@ -41,6 +43,7 @@ export const MAT_MODULES = [
 
 @NgModule({
   declarations: [
+    MarkdownPipe,
     SidebarComponent,
     CardLineChartComponent,
     CardBarChartComponent,
@@ -52,7 +55,8 @@ export const MAT_MODULES = [
     FooterClientComponent,
     NavbarComponent,
     NotificationDropdownComponent,
-    UserDropdownComponent
+    UserDropdownComponent,
+    MainComponent
   ],
   imports: [
     CommonModule,
@@ -74,7 +78,9 @@ export const MAT_MODULES = [
     FooterClientComponent,
     NavbarComponent,
     NotificationDropdownComponent,
-    UserDropdownComponent
+    UserDropdownComponent,
+    MainComponent,
+    MarkdownPipe,
   ]
 })
 export class SharedModule {

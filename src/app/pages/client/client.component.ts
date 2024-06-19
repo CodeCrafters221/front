@@ -12,6 +12,7 @@ export class ClientComponent {
   sideMenu: MenuItem[] = [
     {title: 'Mon Compte', url: '/client/dashboard', icon: 'fa-circle-user'},
     {title: 'Demander un prêt', url: '/client/apply-loan', icon: 'fa-hand-holding-dollar'},
+    {title: 'Ai Interview', url: '/client/ai-interview', icon: 'fa-robot'},
     {title: 'Suivi de mes prêts', url: '/client/view-loan', icon: 'fa-sack-dollar'},
     {title: 'Rembourser un prêt', url: '/client/pay-loan', icon: 'fa-money-bills'},
     {title: 'Messagerie', url: '/client/messaging', icon: 'fa-envelope'},
