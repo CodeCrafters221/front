@@ -76,7 +76,7 @@ models: any[] =[
  private async getAssistantConfigs(){
   const configs:any = await this.aiAssistantService.getAiAssistantConfigs()
   console.log("AI ASSISTANT COMPONENT: ----> ", configs)
-  this.aiConfigs.SYSTEM_INSTRUCTIONS = configs.SYSTEM_INSTRUCTIONS[0]?.parts[0].text
+  this.aiConfigs.SYSTEM_INSTRUCTIONS = configs.SYSTEM_INSTRUCTIONS?.parts[0].text
   this.aiConfigs.MODEL_NAME = configs.MODEL_NAME
   this.aiConfigs.GEMINI_NAME = this.models.find(model => model.value == configs.MODEL_NAME).name
   this.aiConfigs.ASSISTANT_NAME = configs.ASSISTANT_NAME

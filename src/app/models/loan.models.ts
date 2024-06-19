@@ -14,5 +14,6 @@ export interface ILoan  {
   approvalDate: Date;
   status: string;
   transactionId: string;
-  client?: User
+  client?: User,
+  [key: string]: any
 }
