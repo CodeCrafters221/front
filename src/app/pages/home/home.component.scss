@@ -5,13 +5,16 @@ h1,h2,h3,h4{
 // FIRST SECTION
 .landing{
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
     padding: 0 3rem;
-
+    h1{
+    overflow: scroll;
+    white-space: pre-line;
+    width: 100%;
+    }
 
 
     .landing-text{
@@ -19,7 +22,6 @@ h1,h2,h3,h4{
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        width: 50%;
         padding: 2rem;
         transition: all;
         animation: fade-in-left 1s forwards;
@@ -90,10 +92,8 @@ h1,h2,h3,h4{
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 33%;
             height: 100%;
             padding: 2rem;
-            margin-bottom: 5rem;
             .card-img{
                 display: flex;
                 flex-direction: column;
@@ -155,7 +155,6 @@ h1,h2,h3,h4{
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 20%;
             height: 20%;
             margin: 1rem;
             padding: 1rem;
