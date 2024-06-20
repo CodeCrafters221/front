@@ -1,5 +1,6 @@
+import { DOCUMENT } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { ILoan } from 'app/models/loan.models';
 import { environment } from 'environments/environment.debug';
 import { firstValueFrom } from 'rxjs';
@@ -11,6 +12,7 @@ const API = environment.apiUrl // URL OF API  (TO BE UPDATED WHEN DEPLOYING)
   providedIn: 'root'
 })
 export class LoanService {
+  token = inject(DOCUMENT).defaultView?.localStorage?.getItem('access_token')
 
   // -------------------------------------- CONSTRUCTOR -------------------------------------------
   constructor(private http: HttpClient) { }
@@ -29,10 +31,9 @@ export class LoanService {
   // -------------------------------------- GET ALL LOANS -------------------------------------------
   getAllLoans(): Promise<ILoan[]> {
     console.log('GET ALL LOANS')
-    const token = localStorage.getItem('access_token')
     const headersOptions = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + token
+      'Authorization': 'Bearer ' + this.token
     })
     return  firstValueFrom(this.http.get<ILoan[]>(`${API}/loans`, {headers: headersOptions}))
   }
@@ -48,7 +49,7 @@ export class LoanService {
     console.log('GET LOAN BY ID')
     const headersOptions = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+      'Authorization': 'Bearer ' + this.token
     })
     return  firstValueFrom(this.http.get<ILoan>(`${API}/loans/${id}`, {headers: headersOptions}))
   }
@@ -59,7 +60,7 @@ export class LoanService {
     console.log('INSERT LOAN')
     const headersOptions = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+      'Authorization': 'Bearer ' + this.token
     })
     return  firstValueFrom(this.http.post(`${API}/loans`, loan, {headers: headersOptions}))
   }
