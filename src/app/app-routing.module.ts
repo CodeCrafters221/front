@@ -6,7 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 const routes: Routes = [
   { path: '',
   pathMatch: 'full',
-    redirectTo: '/admin',
+    redirectTo: '/home',
    },
   { path: 'home',
   pathMatch: 'full',
@@ -16,18 +16,17 @@ const routes: Routes = [
     pathMatch: 'full',
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
   },
+   {
+    path: 'agent',
+    loadChildren: () => import('./pages/agent/agent.module').then(m => m.AgentModule)
+  },
   {
     path: 'client',
     loadChildren: () => import('./pages/client/client.module').then(m => m.ClientModule)
   },
-  {
-    path: 'agent',
-    pathMatch: 'full',
-    loadChildren: () => import('./pages/agent/agent.module').then(m => m.AgentModule)
-  },
+
   {
     path: 'admin',
-    pathMatch: 'full',
     loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule)
   },
 

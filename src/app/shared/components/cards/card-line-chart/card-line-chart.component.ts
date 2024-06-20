@@ -1,4 +1,5 @@
-import { Component, OnInit, AfterViewInit  } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, inject, OnInit  } from '@angular/core';
 import Chart from 'chart.js/auto';
 
 
@@ -9,12 +10,13 @@ import Chart from 'chart.js/auto';
   styleUrls: ['./card-line-chart.component.scss']
 })
 export class CardLineChartComponent  implements OnInit {
+  document = inject(DOCUMENT)
   constructor() {}
 
   ngOnInit() {}
   ngAfterViewInit() {
     const config = {
-      type: "line", 
+      type: "line",
       data: {
         labels: [
           "January",
@@ -102,9 +104,9 @@ export class CardLineChartComponent  implements OnInit {
         },
       },
     };
-    let ctx: any = document.getElementById("line-chart") as HTMLCanvasElement;
+    let ctx: any = this.document.getElementById("line-chart") as HTMLCanvasElement;
     ctx = ctx.getContext("2d");
     new Chart(ctx, config as any);
-  }  
+  }
 
 }
