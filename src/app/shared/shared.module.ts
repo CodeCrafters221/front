@@ -24,9 +24,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSliderModule} from '@angular/material/slider';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { CardpieComponent } from './components/cards/card-pie/card-pie.component';
+import { CardDoghnutsComponent } from './components/cards/card-doghnuts/card-doghnuts.component';
 import { MainComponent } from './components/main/main.component';
 import { MarkdownPipe } from 'app/pipes/markdown.pipe';
-
 
 export const MAT_MODULES = [
   MatFormFieldModule,
@@ -56,12 +58,16 @@ export const MAT_MODULES = [
     NavbarComponent,
     NotificationDropdownComponent,
     UserDropdownComponent,
+
+    CardpieComponent,
+    CardDoghnutsComponent
     MainComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    CanvasJSAngularChartsModule,
     RouterModule,
 ...MAT_MODULES
   ],
@@ -74,6 +80,8 @@ export const MAT_MODULES = [
     CardSocialTraficComponent,
     CardStatsComponent,
     CardTableComponent,
+    CardpieComponent,
+    CardDoghnutsComponent,
     HeaderStatComponent,
     FooterClientComponent,
     NavbarComponent,
