@@ -28,7 +28,7 @@ areLoansReadyForTesting: boolean = false; // FOR TESTING PURPOSES
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((loansData) => {
-      console.log('AGENT DASHBORD: all loans from resolvers',loansData);
+      console.log('AGENT DASHBORD: all loans from resolvers');
       this.allLoans = loansData['loans'] as ILoan[]
       if(!this.allLoans?.length){
         this.approvedLoans = 0

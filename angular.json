@@ -47,7 +47,7 @@
 						],
 						"scripts": [],
 						"server": "src/main.server.ts",
-						"prerender": true,
+						"prerender": false,
 						"ssr": false
 					},
 					"configurations": {
@@ -56,7 +56,7 @@
 								{
 									"type": "initial",
 									"maximumWarning": "500kb",
-									"maximumError": "1mb"
+									"maximumError": "2mb"
 								},
 								{
 									"type": "anyComponentStyle",
@@ -64,7 +64,13 @@
 									"maximumError": "4kb"
 								}
 							],
-							"outputHashing": "all"
+							"outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.debug.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
 						},
 						"development": {
 							"optimization": false,

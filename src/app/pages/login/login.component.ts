@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
         console.log('LOGIN PAGE: login successful: ', success)
         // REDIRIGER UTILISATEUR EN FONCTION DE SON ROLE
         const user = success['user'] as User
-        var pathToRedirect = user.role == UserRole.ADMIN? '/admin/dashboard':
+        var pathToRedirect = user.role == UserRole.ADMIN? '/admin':
                              user.role == UserRole.CLIENT? '/client/dashboard':
                              user.role == UserRole.AGENT? '/agent/dashboard':
                              ''

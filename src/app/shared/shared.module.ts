@@ -60,7 +60,7 @@ export const MAT_MODULES = [
     UserDropdownComponent,
 
     CardpieComponent,
-    CardDoghnutsComponent
+    CardDoghnutsComponent,
     MainComponent
   ],
   imports: [

@@ -20,14 +20,8 @@ const agentRoutes: Routes = [
         pathMatch: 'full',
         redirectTo: 'dashboard',
       },
-      {
-        path: 'dashboard',
-        component: AgentDashboardComponent,
-        resolve: {
-          loans: agentResolver
-        },
-
-      },
+      {path: 'dashboard', component: AgentDashboardComponent, resolve: {loans: agentResolver},},
+      {path: 'view-loans', component: ClientsLoansComponent,},
     ]
   }
 ]
@@ -46,6 +40,7 @@ const agentRoutes: Routes = [
   ],
   exports: [
     AgentComponent,
+    ClientsLoansComponent,
     AgentDashboardComponent
   ]
 })
