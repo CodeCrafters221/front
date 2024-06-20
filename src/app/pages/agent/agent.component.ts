@@ -5,7 +5,6 @@ import { MenuItem } from 'app/models/menu.interface';
 @Component({
   selector: 'app-agent',
   templateUrl: './agent.component.html',
-  styleUrl: './agent.component.scss'
 })
 export class AgentComponent {
   navBarTitle!:string

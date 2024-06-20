@@ -1,6 +1,5 @@
-<h2 style="text-align: center;">Formulaire de Demande de Prêt</h2>
-<div [formGroup]="loanRequestForm" class="loan-request-form">
-  <form (ngSubmit)="onSubmit()">
+<div  class="loan-request-form shadow-lg rounded-lg mt-12 mx-auto">
+  <form class = "flex flex-col " [formGroup]="loanRequestForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="firstName" class="form-label">Nom</label>
       <input id="firstName" formControlName="firstName" type="text" placeholder="Entrez votre nom">
@@ -18,7 +17,7 @@
       <select id="gender" formControlName="gender">
         <option value="">Sélectionnez votre genre</option>
         <option value="Feminin">Feminin</option>
-        <option value="Masculin">Masculin</option> 
+        <option value="Masculin">Masculin</option>
       </select>
     </div>
     <div class="form-group">
@@ -36,6 +35,18 @@
     <div class="form-group">
       <label for="amount" class="form-label">Montant du Prêt *</label>
       <input id="amount" formControlName="amount" type="number" placeholder="0000 FCFA">
+    </div>
+    <div class="form-group">
+      <label for="capital" class="form-label">Capital *</label>
+      <input id="capital" formControlName="capital" type="number" placeholder="Quelle est la valeur moyenne de vos biens matériels (FCFA)">
+    </div>
+    <div class="form-group">
+      <label for="guaranteeTitle" class="form-label">Nom/Titre de la garantie *</label>
+      <input id="guaranteeTitle" formControlName="guaranteeTitle" type="text" placeholder="Quelle est votre garantie si vous en avez (Ex: Apartement, Maison, Voiture, etc)">
+    </div>
+    <div class="form-group">
+      <label for="guaranteeAmount" class="form-label">Garantie *</label>
+      <input id="guaranteeAmount" formControlName="guaranteeAmount" type="text" placeholder="Quelle est la valeur moyenne de votre garantie (FCFA)">
     </div>
     <div class="form-group">
       <label for="professionalCategory" class="form-label">Catégorie Professionnelle *</label>
@@ -56,6 +67,10 @@
       <input id="companyName" formControlName="companyName" type="text" placeholder="Veuillez fournir le nom de votre business ou le nom de l’entreprise ou vous travaillez">
     </div>
     <div class="form-group">
+      <label for="salary" class="form-label">Votre Salaire ou Revenu Mensuel Moyen</label>
+      <input id="salary" formControlName="salary" type="text" placeholder="Veuillez fournir le montant de votre salaire ou revenu moyen mensuel">
+    </div>
+    <div class="form-group">
       <label for="startDate" class="form-label">Date de Début du Travail *</label>
       <input id="startDate" formControlName="startDate" type="date">
     </div>
@@ -68,15 +83,16 @@
         <option value="Free Money">Free Money</option>
       </select>
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="documents" class="form-label">Documents & Justificatifs *</label>
       <input id="documents" formControlName="documents" type="file">
       <textarea id="justificatifs" formControlName="justificatifs" rows="4" placeholder="Veuillez fournir les explications pour justifier votre demande de prêts. Veuillez également fournir en quelques mots les raisons de votre demande de prêts"></textarea>
-    </div>
+    </div> -->
     <div class="form-group">
       <label for="confirmInfo" class="form-label">Veuillez confirmer la validité de vos informations actuelles avant de valider *</label>
-      <input id="confirmInfo" formControlName="confirmInfo" type="checkbox">
+      <input (change)="onValidateInfo($event)" id="confirmInfo" formControlName="confirmInfo" type="checkbox">
     </div>
-    <button type="submit" [disabled]="loanRequestForm.invalid">Soumettre</button>
+    <button type="submit" class = "btn-primary" [disabled]="loanRequestForm.invalid">VALIDER LA DEMANDE</button>
+    <span class="text-xs mx-auto self-center text-blue-500 -mt-3">En cliquant sur le bouton ”Valider la Demande”, vous acceptez les conditions du contrat de prêt</span>
   </form>
 </div>

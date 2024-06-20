@@ -17,7 +17,7 @@ export class AiAssistantService {
 
   // -------------------------------------- GET CONFIGS-------------------------------------------
   getAiAssistantConfigs() {
-    console.log('GET ALL LOANS')
+    console.log('GET AI CONFIGS --> ')
     const token = localStorage.getItem('access_token')
     const headersOptions = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -38,5 +38,19 @@ export class AiAssistantService {
       'Authorization': 'Bearer ' + token
     })
     return  firstValueFrom(this.http.put(`${AI_ASSISTANT_API}/configs`, configs, {headers: headersOptions}))
+  }
+
+
+  // -------------------------------------- GET RESPONSE FROM AI ASSISTANT -------------------------------------------
+  getResponseFromAiAssistant(loanId: string, clientMessage: string){
+    console.log('AI ASSISTANT SERVICE: get response from ai assistant: ', loanId)
+    const token = localStorage.getItem('access_token')
+    const headersOptions = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token,
+      'Accept': 'text/plain'
+    })
+    return  firstValueFrom(this.http.post(`${AI_ASSISTANT_API}/interview`, {loanId, clientMessage}, {headers: headersOptions}))
+
   }
 }

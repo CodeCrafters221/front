@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AgentComponent } from './agent.component';
+import { AiInterviewComponent } from './ai-interview.component';
 
-describe('AgentComponent', () => {
-  let component: AgentComponent;
-  let fixture: ComponentFixture<AgentComponent>;
+describe('AiInterviewComponent', () => {
+  let component: AiInterviewComponent;
+  let fixture: ComponentFixture<AiInterviewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AgentComponent]
+      declarations: [AiInterviewComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(AgentComponent);
+    fixture = TestBed.createComponent(AiInterviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

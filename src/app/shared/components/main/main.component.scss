@@ -1,5 +1,4 @@
 .main-light{
-  flex-direction: row;
   app-user-navbar{
     position: fixed;
     z-index: 999;
@@ -11,7 +10,6 @@
   section{
     width: 100%;
     position: relative;
-    margin-left: 16rem;
     top: 6rem;
   background: var(--lighter);
 

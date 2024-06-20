@@ -1,0 +1,60 @@
+
+<main class = 'flex flex-col justify-center items-center'>
+  <div class="chat fixed w-full md:w-[60%] top-32 bg-white shadow-lg rounded-lg h-[80vh] mb-[4vh] grid">
+    <div class="messages-header p-4 h-fit fixed w-[inherit] bg-white z-10">
+      <h1 class="text-lg font-semibold">INTERVIEW AVEC L'ASSISTANT IA</h1>
+    </div>
+    <div #chatFrame   class="px-4 pt-2 pb-56 space-y-4 absolute top-20">
+      <div class="message assistant">
+        <div class="flex">
+          <img src="../../../../../assets/imgs/ai-assistant.png" alt="Assistant" class="w-10 h-10 rounded-full">
+          <div class="ml-2 bg-gray-200 p-2 rounded-lg">
+            <p class="text-gray-700" [innerHTML]="aiFirstResponse | markdown"></p>
+            <span class="text-xs text-gray-500">{{ responseTimestamp }}</span>
+          </div>
+        </div>
+      </div>
+
+      @for (chatItem of chatHistory; track $index) {
+        @if(chatItem.user == 'CLIENT') {
+          <div  class="message client">
+            <div class="flex justify-end">
+              <div class="mr-2 bg-blue-600 text-white p-2 rounded-lg">
+                <p [innerHTML]="chatItem.message | markdown"></p>
+                <span class="text-xs text-gray-200">{{ chatItem.timestamp }}</span>
+              </div>
+              <img src="../../../../../assets/imgs/pp2.jpeg" alt="Assistant" class="w-10 h-10 rounded-full">
+            </div>
+          </div>
+        } @else {
+
+      <div class="message assistant">
+        <div class="flex">
+          <img src="../../../../../assets/imgs/ai-assistant.png" alt="Assistant" class="w-10 h-10 rounded-full">
+          <div class="mr-2 bg-blue-600 text-white p-2 rounded-lg">
+            <p [innerHTML]="chatItem.message | markdown"></p>
+            <span class="text-xs text-gray-200">{{ chatItem.timestamp }}</span>
+          </div>
+        </div>
+      </div>
+    }
+  }
+
+    </div>
+    <div class="send-message fixed flex gap-2 p-4 self-end bg-white w-[inherit] rounded-lg">
+      <button>
+        <i class="fa-solid fa-microphone"></i>
+      </button>
+      <textarea [(ngModel)] = "clientMessage" placeholder="Écrire votre message" class="p-2 border border-gray-300 rounded-lg"></textarea>
+      <button>
+        <i class="fa-solid fa-paperclip"></i>
+      </button>
+      <button>
+        <i class="fa-solid fa-file-image"></i>
+      </button>
+      <button [disabled]="clientMessage === '' || !clientMessage" (click) = "onClientMessage(clientMessage)" class="btn-primary  text-white font-bold rounded flex justify-center items-center">
+        <i class="fa-solid fa-paper-plane mr-2"></i>Envoyer
+      </button>
+    </div>
+  </div>
+</main>
