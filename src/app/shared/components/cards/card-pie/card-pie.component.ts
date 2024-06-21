@@ -13,7 +13,7 @@ export class CardpieComponent {
 	  },
 	  data: [{
 		type: "pie",
-		startAngle: -90,
+		startAngle: 25,
 		indexLabel: "{name}: {y}",
 		yValueFormatString: "#,###.##'%'",
 		dataPoints: [
