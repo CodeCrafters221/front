@@ -36,11 +36,12 @@ export class AiInterviewComponent implements OnInit {
   ngOnInit(): void {
     const splitRes = this.aiFirstResponse.split(' ')
     const scores = splitRes.filter(e=>e.includes('%'))
+
     var solvency
     if(scores.length>5 || scores.length==1) solvency = scores.reverse()[0]
     console.log("AI INTERVIEW COMPONENT: content of ngoninit --->: ", solvency);
     if(solvency){
-      const percent = `<h2 class = 'text-blue-700 flex justify-center items-center'>${solvency}</h2>`
+      const percent = `<h2 class = 'text-blue-700 flex justify-center items-center'>${solvency.split('%')[0]}%</h2>${solvency.split('%').length>1? '\n'+solvency.split('%').slice(1).join(''):''}`
       splitRes[splitRes.lastIndexOf(solvency as string)] = percent
       this.aiFirstResponse = splitRes.join(' ')
     }
