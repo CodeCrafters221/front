@@ -17,6 +17,13 @@ Comment pouvons-nous simplifier le processus de demande de prêt pour les client
 système d'information (site web) en intégrant une IA afin d'accélérer et d'automatiser le processus d'octroi de prêt tout en réduisant les risques de défaut de paiement.
 
 
+## QUELQUES CAPTURES DU SITE
+<img width="1639" alt="HOME" src="https://github.com/user-attachments/assets/4860d758-b1c3-4c13-9c51-1ac83769092d">
+<img width="1639" alt="LOGIN" src="https://github.com/user-attachments/assets/dc7c4744-be04-48e6-b250-e4327dd2dd86">
+<img width="1640" alt="AI" src="https://github.com/user-attachments/assets/1cf9dcd8-9b1a-4c5d-a07b-1d9d58e82f1f">
+<img width="1640" alt="LOANS" src="https://github.com/user-attachments/assets/f9f3fa53-eb4e-4a9f-a05e-3438dc23af96">
+
+
 
 
 
